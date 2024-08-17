@@ -320,6 +320,11 @@
     "title": "Hacker Typer"
   },
   {
+    "link": "projects/helicopter/index.html",
+    "imgSrc": "projects/helicopter/helicopter.png",
+    "title": "Helicopter"
+  },
+  {
     "link": "projects/hba/index.html",
     "imgSrc": "projects/hba/hoverbotarena.jpg",
     "title": "Hover Bot Arena"
