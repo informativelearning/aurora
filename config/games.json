@@ -280,6 +280,11 @@
     "title": "Flash Tetris"
   },
   {
+    "link": "projects/fridaynightfunkin/index.html",
+    "imgSrc": "projects/fridaynightfunkin/fnf-icon.jpg",
+    "title": "fridaynightfunkin"
+  },
+  {
     "link": "projects/game-inside/index.html",
     "imgSrc": "projects/game-inside/img/display.png",
     "title": "Game Inside a Game Inside a Game..."
