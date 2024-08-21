@@ -12,6 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="shortcut-icon" href="/favicon.ico" />
+    <!-- Vercel Analytics Script -->
+    <script async src="https://vercel.analytics/analytics.js"></script>
     <script src="/js/main.js"></script>
     <style>
       p {
@@ -100,17 +102,17 @@
         data.forEach((project) => {
           const game = document.createElement("a");
           game.href = project.link;
-            game.className = "game-link container";
-            game.innerHTML = `
+          game.className = "game-link container";
+          game.innerHTML = `
             <div class="game-tile">
               <img class="game-icon" src="${project.imgSrc}" alt="icon" />
               <p class="game-title">${project.title}</p>
-              </div>`;
-              container.appendChild(game);
-          });
-          document.getElementById("loader").style.display = "none";
-        })
-        .catch((error) => console.error("Error:", error));
+            </div>`;
+          container.appendChild(game);
+        });
+        document.getElementById("loader").style.display = "none";
+      })
+      .catch((error) => console.error("Error:", error));
 
       function searchGames() {
         const input = document.getElementById("search");
@@ -124,18 +126,19 @@
             game.href = project.link;
             game.className = "game-link container";
             game.innerHTML = `
-            <div class="game-tile">
-              <img class="game-icon" src="${project.imgSrc}" alt="icon" loading="lazy" />
-              <p class="game-title">${project.title}</p>
+              <div class="game-tile">
+                <img class="game-icon" src="${project.imgSrc}" alt="icon" loading="lazy" />
+                <p class="game-title">${project.title}</p>
               </div>`;
             container.appendChild(game);
           });
-        }
-        const backToTopButton = document.getElementById('back-to-top');
-        window.onscroll = function () {
-          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            backToTopButton.style.display = "block";
-          } else {
+      }
+      
+      const backToTopButton = document.getElementById('back-to-top');
+      window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          backToTopButton.style.display = "block";
+        } else {
           backToTopButton.style.display = "none";
         }
       };
