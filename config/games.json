@@ -40,6 +40,11 @@
     "title": "Avalanche"
   },
   {
+    "link": "projects/awesometanks2/index.html",
+    "imgSrc": "projects/awesometanks2/awesometanks2.jpg",
+    "title": "Awesome Tanks 2"
+  },
+  {
     "link": "projects/backrooms/index.html",
     "imgSrc": "projects/backrooms/img/splash.jpg",
     "title": "Backrooms"
