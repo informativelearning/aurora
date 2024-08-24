@@ -82,6 +82,7 @@
         <input id="url-target" type="url" pattern="https://.*" placeholder="Enter a website URL" autocomplete="on" />
         <p>Note this will not work with some websites, but you can copy the link of this website and put it in for extra privacy.</p>
         <button id="create">Create Page</button>
+        <button id="change-favicon">Change Favicon to Canvas</button>
     </div>
     
     <div class="section">
@@ -111,5 +112,18 @@
     
     <script src="/js/misc.js"></script>
     <script src="/js/main.js"></script>
+    <script>
+        document.getElementById('change-favicon').addEventListener('click', function() {
+            const link = document.querySelector("link[rel~='icon']");
+            if (link) {
+                link.href = 'https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico';
+            } else {
+                const newLink = document.createElement('link');
+                newLink.rel = 'icon';
+                newLink.href = 'https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico';
+                document.head.appendChild(newLink);
+            }
+        });
+    </script>
 </body>
 </html>
