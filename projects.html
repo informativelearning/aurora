@@ -141,6 +141,13 @@
         <a href="/index.html"><button class="btn-secondary">Go to the homepage</button></a>
     </p>
     <button id="back-to-top">Back to top</button>
+
+    <!-- Vercel Analytics script -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
     <script>
         let games = [];
         fetch("config/games.json")
