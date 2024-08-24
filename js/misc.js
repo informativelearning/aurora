@@ -89,23 +89,24 @@ document.getElementById("create").onclick = function () {
 // Event handler for the preset select dropdown
 presetSelect.addEventListener('change', function() {
   switch (this.value) {
-    case "Canvas":
-      applyUrl('https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico', 'Canvas');
+    case "canvas":
+      applyUrl('https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon/favicon-32x32.png', 'Canvas');
       break;
-    case "Aeries Student Dashboard":
+    case "aeries":
       applyUrl('https://wascouhsd.aeries.net/student/favicon.ico', 'Aeries Student Dashboard');
       break;
-    case "Gmail":
+    case "gmail":
       applyUrl('https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico', 'Gmail');
       break;
+    default:
+      output("No preset selected", "red");
   }
 });
 
-// Ads consent functionality
-const adConsentCheckbox = document.getElementById("adConsent");
-adConsentCheckbox.checked = localStorage.getItem("adConsent") === 'true';
-adConsentCheckbox.addEventListener('change', function () {
-  localStorage.setItem("adConsent", this.checked);
-  console.log("Ad consent status: " + this.checked);
-  alert("Changes saved.");
+// Event listeners for the buttons
+document.getElementById('set-title-btn').addEventListener('click', changeTabTitle);
+document.getElementById('set-icon-btn').addEventListener('click', changeTabIcon);
+document.getElementById('reset-btn').addEventListener('click', resetTabSettings);
+document.getElementById('imitate-canvas-btn').addEventListener('click', () => {
+  applyUrl('https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon/favicon-32x32.png', 'Canvas');
 });

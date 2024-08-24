@@ -51,14 +51,14 @@
       <h1>Tab Cloaker</h1>
       <p>Enter a new tab title or a image URL below. What you set will be used on the whole site.</p>
       <p>
-        <input id="userinput" type="url" placeholder="Enter a title or image URL" autocomplete="on" style="width: 100%; padding: 10px; border: none; border-radius: 10px; background-color: #2c2c2c; color: #ffffff;" />
+        <input id="userinput" type="text" placeholder="Enter a title or image URL" autocomplete="on" style="width: 100%; padding: 10px; border: none; border-radius: 10px; background-color: #2c2c2c; color: #ffffff;" />
       </p>
       <p id="console-output"></p>
       <div class="button-wrapper">
-        <button onclick="changeTabTitle();" style="background-color: #b625cc;">Set Title</button>
-        <button onclick="changeTabIcon();" style="background-color: #b625cc;">Set Icon</button>
-        <button onclick="resetTabSettings();" style="background-color: #b625cc;">Reset</button>
-        <button onclick="imitateCanvas();" style="background-color: #b625cc;">Press to Imitate Canvas</button>
+        <button id="set-title-btn" style="background-color: #b625cc;">Set Title</button>
+        <button id="set-icon-btn" style="background-color: #b625cc;">Set Icon</button>
+        <button id="reset-btn" style="background-color: #b625cc;">Reset</button>
+        <button id="imitate-canvas-btn" style="background-color: #b625cc;">Press to Imitate Canvas</button>
       </div>
     </div>
 
