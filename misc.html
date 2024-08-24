@@ -16,10 +16,13 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            overflow: hidden; /* Prevents any overflow issues */
         }
         h1, h2 {
             font-size: 2em;
-            margin-bottom: 1em;
+            margin: 0;
+            padding: 0;
+            text-align: center;
         }
         .button-wrapper {
             display: flex;
@@ -78,7 +81,9 @@
     <script src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-    <h2 style="text-align: center; font-size: 2em; margin-bottom: 1em;">Miscellaneous stuff</h2>
+    <div style="text-align: center;">
+        <h2 style="font-size: 2em; margin-bottom: 1em;">Miscellaneous stuff</h2>
+    </div>
 
     <!-- About:blank Section -->
     <div class="section">
