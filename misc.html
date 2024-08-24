@@ -68,15 +68,15 @@
             switch (selection) {
                 case 'canvas':
                     title = 'Canvas';
-                    icon = 'https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon/favicon-32x32.png'; // Your Canvas favicon URL
+                    icon = 'https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon/favicon-32x32.png'; // Canvas favicon URL
                     break;
                 case 'aeries':
                     title = 'Aeries Dashboard';
-                    icon = 'https://wascouhsd.aeries.net/student/favicon.ico'; // Your Aeries favicon URL
+                    icon = 'https://wascouhsd.aeries.net/student/favicon.ico'; // Aeries favicon URL
                     break;
                 case 'gmail':
                     title = 'Gmail';
-                    icon = 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico'; // Your Gmail favicon URL
+                    icon = 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico'; // Gmail favicon URL
                     break;
                 default:
                     title = 'About Blank';
@@ -86,20 +86,23 @@
             // Open a new about:blank page
             const newWindow = window.open('about:blank', '_blank');
 
-            // Ensure the new window is fully loaded before modifying it
-            newWindow.onload = function() {
-                // Set the title
-                newWindow.document.title = title;
-
-                // Set the favicon
-                const link = newWindow.document.createElement('link');
-                link.rel = 'icon';
-                link.href = icon;
-                newWindow.document.head.appendChild(link);
-
-                // Navigate to the specified URL
-                newWindow.location.href = url;
-            };
+            // Write HTML content into the new about:blank page
+            newWindow.document.open();
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en-US">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>${title}</title>
+                    <link rel="icon" href="${icon}" type="image/x-icon">
+                </head>
+                <body>
+                    <iframe src="${url}" style="width: 100%; height: 100vh; border: none;"></iframe>
+                </body>
+                </html>
+            `);
+            newWindow.document.close();
         }
 
         const backToTopButton = document.getElementById('back-to-top');
