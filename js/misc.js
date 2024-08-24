@@ -85,7 +85,7 @@ document.getElementById("create").onclick = function () {
 presetSelect.addEventListener('change', function() {
   switch (this.value) {
     case "canvas":
-      applyUrl('https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon/favicon-32x32.png', 'Canvas');
+      applyUrl('https://img.icons8.com/?size=512&id=oECahFP3ibID&format=png', 'Dashboard');
       break;
     case "aeries":
       applyUrl('https://wascouhsd.aeries.net/student/favicon.ico', 'Aeries Student Dashboard');
