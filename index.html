@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>Miscellaneous | Vermin Supreme's Palace</title>
+    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
+    <meta property="og:title" content="Welcome to Vermin Supreme's Palace, a lightweight, fast, and clean site." />
+    <meta property="og:site_name" content="mathematicalframeworks.vercel.app" />
+    <meta property="og:description" content="Welcome to Vermin Supreme's Palace, a lightweight, fast, and clean site." />
+    <meta name="description" content="Welcome to Vermin Supreme's Palace, a lightweight, fast, and clean site." />
+    <meta name="author" content="Vermin Supreme's Palace" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vermin Supreme's Palace</title>
     <style>
         body {
             background-color: #121212;
             color: #ffffff;
-            font-family: sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,176 +23,78 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-        }
-        .text-center {
             text-align: center;
         }
-        .button-wrapper {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 1em;
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            color: #22c55e;
+            text-shadow: 2px 2px 4px #000000;
         }
-        input {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-            background-color: #2c2c2c;
-            color: #ffffff;
-            margin-bottom: 1em;
+        #subtitle {
+            font-size: 1.5em;
+            margin-bottom: 1.5em;
+            color: #cccccc;
+        }
+        p {
+            max-width: 600px;
+            margin: 20px auto;
         }
         button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            background-color: #b625cc;
-            color: #ffffff;
             cursor: pointer;
+            background-color: #22c55e;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            font-size: 16px;
+            border-radius: 20px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #1d9a4f;
+        }
+        .btn-secondary {
+            background-color: #b625cc;
+        }
+        .btn-secondary:hover {
+            background-color: #a71aab;
+        }
+        .btn-tertiary {
+            background-color: #ff8c00;
+        }
+        .btn-tertiary:hover {
+            background-color: #e07b00;
+        }
+        a {
+            text-decoration: none;
+        }
+        .footer {
+            color: #cccccc;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #22c55e;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h2 class="text-center" style="font-size: 2em; margin-bottom: 1em;">Miscellaneous Stuff</h2>
-
-    <!-- Section for about:blank page creation -->
-    <div style="width: 100%; max-width: 600px; margin-bottom: 2em;">
-        <div>
-            <h1>about:blank</h1>
-            <p>Enter a URL you want to be opened in an about:blank page below:</p>
-            <input id="url-target" type="url" pattern="https://.*" placeholder="Enter a website URL" autocomplete="on" />
-            <p>Note this will not work with some websites, but you can copy the link of this website and put it in for extra privacy.</p>
-        </div>
-        <div class="button-wrapper">
-            <button id="create">Create Page</button>
-        </div>
-    </div>
-
-    <!-- Section for changing tab title and favicon -->
-    <div style="width: 100%; max-width: 600px;">
-        <div>
-            <h1>Tab Cloaker</h1>
-            <p>Enter a new tab title or an image URL below. What you set will be used on the whole site.</p>
-            <input id="userinput" type="url" placeholder="Enter a title or image URL" autocomplete="on" />
-            <p id="console-output"></p>
-        </div>
-        <div class="button-wrapper">
-            <button id="canvas-btn" style="background-color: #b625cc;">Press to Imitate Canvas</button>
-            <button id="aeries-btn" style="background-color: #b625cc;">Press to Imitate Aeries</button>
-            <button id="gmail-btn" style="background-color: #b625cc;">Press to Imitate Gmail</button>
-        </div>
-    </div>
-
-    <!-- Section for ads consent -->
-    <div style="width: 100%; max-width: 600px; margin-bottom: 2em;">
-        <div>
-            <h1>Ads Consent</h1>
-            <p>Sometimes, ads are shown to support the creator. If you would not like to see ads or if they slow down your computer too much, you can disable them here.</p>
-            <label for="adConsent">Do not show ads at all:</label>
-            <input type="checkbox" id="adConsent" name="adConsent">
-        </div>
-    </div>
-
-    <!-- Button to go to the homepage -->
-    <p class="text-center" style="margin-top: 2em;">
-        <a href="/index.html" style="text-decoration: none;">
-            <button style="background-color: #22c55e;">
-                Go to the homepage
-            </button>
-        </a>
+    <h1>Vermin Supreme's Palace</h1>
+    <span id="subtitle">Explore and Enjoy!</span>
+    <p>
+        Welcome to Vermin Supreme's Palace, a lightweight, lightning fast, and simple site.<br />
+        <a href="/projects.html"><button>Start playing!</button></a><br />
+        <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
+        <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
     </p>
-
-    <!-- Button to go back to the top -->
-    <button id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px;">Back to top</button>
-
-    <script>
-        document.getElementById('create').addEventListener('click', function() {
-            const url = document.getElementById('url-target').value;
-            if (url) {
-                window.open(url, '_blank');
-            } else {
-                alert('Please enter a URL.');
-            }
-        });
-
-        function changeTabTitle() {
-            const title = document.getElementById('userinput').value;
-            if (title) {
-                document.title = title;
-            } else {
-                alert('Please enter a title.');
-            }
-        }
-
-        function changeTabIcon() {
-            const url = document.getElementById('userinput').value;
-            if (url) {
-                let link = document.querySelector('link[rel="icon"]');
-                if (link) {
-                    link.href = url;
-                } else {
-                    link = document.createElement('link');
-                    link.rel = 'icon';
-                    link.href = url;
-                    document.head.appendChild(link);
-                }
-            } else {
-                alert('Please enter an image URL.');
-            }
-        }
-
-        function resetTabSettings() {
-            document.title = 'Vermin Supreme\'s Palace';
-            let link = document.querySelector('link[rel="icon"]');
-            if (link) {
-                link.remove();
-            }
-        }
-
-        function imitateSite(site) {
-            let title, iconUrl;
-            switch (site) {
-                case 'canvas':
-                    title = 'Canvas';
-                    iconUrl = 'https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico';
-                    break;
-                case 'aeries':
-                    title = 'Aeries Student Dashboard';
-                    iconUrl = 'https://wascouhsd.aeries.net/student/favicon.ico';
-                    break;
-                case 'gmail':
-                    title = 'Gmail';
-                    iconUrl = 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png';
-                    break;
-            }
-            document.title = title;
-            let link = document.querySelector('link[rel="icon"]');
-            if (link) {
-                link.href = iconUrl;
-            } else {
-                link = document.createElement('link');
-                link.rel = 'icon';
-                link.href = iconUrl;
-                document.head.appendChild(link);
-            }
-        }
-
-        document.getElementById('canvas-btn').addEventListener('click', () => imitateSite('canvas'));
-        document.getElementById('aeries-btn').addEventListener('click', () => imitateSite('aeries'));
-        document.getElementById('gmail-btn').addEventListener('click', () => imitateSite('gmail'));
-
-        const backToTopButton = document.getElementById('back-to-top');
-        window.onscroll = function () {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        };
-
-        backToTopButton.onclick = function () {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        };
-    </script>
+    <p class="footer">
+        &copy; Vermin Supreme's Palace, 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
+        <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
+        Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
+    </p>
+    <script src="/js/main.js"></script>
+    <script src="/js/subtitle.js"></script>
 </body>
 </html>
