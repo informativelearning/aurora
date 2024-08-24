@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Miscellaneous | Vermin Supreme's Palace</title>
     <style>
-        .text-center {
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center content vertically */
+            min-height: 100vh; /* Ensure full viewport height */
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+        h2 {
             text-align: center;
+            font-size: 2em;
+            margin-bottom: 1em;
         }
         .button-wrapper {
             display: flex;
-            flex-direction: column; /* Changed to column for better vertical alignment */
+            flex-direction: column;
             align-items: center;
             margin-top: 1em;
         }
@@ -20,8 +36,8 @@
             border-radius: 10px;
             color: #ffffff;
             margin-top: 10px;
-            width: 100%; /* Ensures buttons take full width of the container */
-            max-width: 300px; /* Limits the maximum width for better appearance */
+            width: 100%;
+            max-width: 300px;
         }
         .button-wrapper .set-title-btn { background-color: #b625cc; }
         .button-wrapper .set-icon-btn { background-color: #4caf50; }
@@ -33,8 +49,8 @@
     <!-- Vercel Analytics -->
     <script src="/_vercel/insights/script.js"></script>
 </head>
-<body style="background-color: #121212; color: #ffffff; font-family: sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
-    <h2 style="text-align: center; font-size: 2em; margin-bottom: 1em;">Miscellaneous stuff</h2>
+<body>
+    <h2>Miscellaneous stuff</h2>
 
     <!-- About:blank Section -->
     <div style="width: 100%; max-width: 600px; margin-bottom: 2em;">
@@ -92,8 +108,6 @@
             </button>
         </a>
     </p>
-
-    <button id="back-to-top" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: #22c55e; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);">Back to top</button>
 
     <script type="module" src="/js/misc.js"></script>
     <script type="module" src="/js/main.js"></script>
