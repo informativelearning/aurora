@@ -1,8 +1,3 @@
-import { inject } from '@vercel/analytics';
-
-// Call inject() to enable Vercel Analytics
-inject();
-
 // Utility function to output messages
 const output = (msg, clr) => {
   const txt = document.getElementById("console-output");
