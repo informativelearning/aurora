@@ -3,18 +3,21 @@ import { inject } from '@vercel/analytics';
 // Call inject() to enable Vercel Analytics
 inject();
 
-// Your existing code
+// Utility function to output messages
 const output = (msg, clr) => {
   const txt = document.getElementById("console-output");
   txt.style.color = clr;
   txt.innerText = msg;
 };
 
+// Cache DOM elements
 const tcInput = document.getElementById("userinput");
+const urlInput = document.getElementById("url-target");
+const presetSelect = document.getElementById("apply-presets");
 
+// Function to change the tab title
 const changeTabTitle = () => {
-  const tcInput = document.getElementById("userinput");
-  if (tcInput.value == "") {
+  if (tcInput.value === "") {
     window.localStorage.removeItem("title");
     output("No title entered. Default applied, refresh to see changes", "red");
   } else {
@@ -25,6 +28,7 @@ const changeTabTitle = () => {
   tcInput.value = "";
 };
 
+// Function to change the tab icon
 const changeTabIcon = () => {
   if (tcInput.value === "") {
     document.querySelector("link[rel*='icon']").href = "";
@@ -40,18 +44,19 @@ const changeTabIcon = () => {
   tcInput.value = "";
 };
 
+// Function to validate URL
 const validURL = (str) => {
   const exp = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
-  const reg = new RegExp(exp);
-  return !!reg.test(str);
+  return !!new RegExp(exp).test(str);
 };
 
+// Function to reset tab settings
 const resetTabSettings = () => {
-  let items = ["icon", "title"];
-  items.forEach((item) => window.localStorage.removeItem(item));
+  ["icon", "title"].forEach(item => window.localStorage.removeItem(item));
   window.location.reload();
 };
 
+// Function to apply URL and title
 function applyUrl(url, title) {
   document.getElementById("userinput").value = url;
   changeTabIcon();
@@ -60,14 +65,14 @@ function applyUrl(url, title) {
   output("Preset applied successfully!", "green");
 }
 
-const url = document.getElementById("url-target");
-const urlObj = new window.URL(window.location.href);
+// Event handler for the 'Create page' button
 document.getElementById("create").onclick = function () {
-  if (!url.value.startsWith("https://") && !url.value.startsWith("http://")) {
-    url.value = `https://${url.value.split("https://").pop()}`;
-  } else if (url.value.startsWith("http://")) {
-    url.value = `https://${url.value.split("http://").pop()}`;
+  if (!urlInput.value.startsWith("https://") && !urlInput.value.startsWith("http://")) {
+    urlInput.value = `https://${urlInput.value}`;
+  } else if (urlInput.value.startsWith("http://")) {
+    urlInput.value = `https://${urlInput.value.substring(7)}`;
   }
+  
   const win = window.open();
   win.document.body.style.margin = "0";
   win.document.body.style.height = "100vh";
@@ -75,21 +80,32 @@ document.getElementById("create").onclick = function () {
   iframe.style.border = "none";
   iframe.style.width = "100%";
   iframe.style.height = "100%";
-  iframe.style.margin = "0";
+  iframe.src = urlInput.value;
   iframe.referrerpolicy = "no-referrer";
   iframe.allow = "fullscreen";
-  iframe.src = url.value;
   win.document.body.appendChild(iframe);
 };
 
-var adConsentCheckbox = document.getElementById("adConsent");
+// Event handler for the preset select dropdown
+presetSelect.addEventListener('change', function() {
+  switch (this.value) {
+    case "Canvas":
+      applyUrl('https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico', 'Canvas');
+      break;
+    case "Aeries Student Dashboard":
+      applyUrl('https://wascouhsd.aeries.net/student/favicon.ico', 'Aeries Student Dashboard');
+      break;
+    case "Gmail":
+      applyUrl('https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico', 'Gmail');
+      break;
+  }
+});
 
+// Ads consent functionality
+const adConsentCheckbox = document.getElementById("adConsent");
 adConsentCheckbox.checked = localStorage.getItem("adConsent") === 'true';
-
 adConsentCheckbox.addEventListener('change', function () {
   localStorage.setItem("adConsent", this.checked);
   console.log("Ad consent status: " + this.checked);
   alert("Changes saved.");
 });
-
-var adStatus = adConsentCheckbox.checked;
