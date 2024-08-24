@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miscellaneous | Vermin Supreme's Palace</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/favicon.ico" />
     <style>
         body {
             background-color: #121212;
@@ -84,15 +83,23 @@
                     icon = '/favicon.ico'; // Default favicon URL
             }
 
+            // Open a new about:blank page
             const newWindow = window.open('about:blank', '_blank');
-            newWindow.document.title = title;
 
-            const link = newWindow.document.createElement('link');
-            link.rel = 'icon';
-            link.href = icon;
-            newWindow.document.head.appendChild(link);
+            // Ensure the new window is fully loaded before modifying it
+            newWindow.onload = function() {
+                // Set the title
+                newWindow.document.title = title;
 
-            newWindow.location.href = url;
+                // Set the favicon
+                const link = newWindow.document.createElement('link');
+                link.rel = 'icon';
+                link.href = icon;
+                newWindow.document.head.appendChild(link);
+
+                // Navigate to the specified URL
+                newWindow.location.href = url;
+            };
         }
 
         const backToTopButton = document.getElementById('back-to-top');
