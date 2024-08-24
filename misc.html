@@ -45,6 +45,21 @@
             cursor: pointer;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
         }
+        /* Hide scrollbar and borders for iframe */
+        .iframe-container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
@@ -98,7 +113,9 @@
                     <link rel="icon" href="${icon}" type="image/x-icon">
                 </head>
                 <body>
-                    <iframe src="${url}" style="width: 100%; height: 100vh; border: none;"></iframe>
+                    <div class="iframe-container">
+                        <iframe src="${url}"></iframe>
+                    </div>
                 </body>
                 </html>
             `);
