@@ -1,3 +1,8 @@
+import { inject } from '@vercel/analytics';
+
+// Call inject() to enable Vercel Analytics
+inject();
+
 console.warn(
   "%cHello!!",
   "color: red; font-weight: 600; background: yellow; padding: 0 5px; border-radius: 5px",

@@ -1,3 +1,9 @@
+import { inject } from '@vercel/analytics';
+
+// Call inject() to enable Vercel Analytics
+inject();
+
+// Your existing code
 const output = (msg, clr) => {
   const txt = document.getElementById("console-output");
   txt.style.color = clr;
