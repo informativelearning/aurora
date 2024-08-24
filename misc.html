@@ -15,7 +15,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh; /* Ensure the body takes up the full viewport height */
             overflow: auto;
         }
         h2 {
@@ -35,7 +35,9 @@
         .button-wrapper {
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+            justify-content: center; /* Center buttons horizontally */
+            gap: 10px; /* Space between buttons */
             margin-top: 1em;
         }
         .button-wrapper button {
@@ -43,9 +45,9 @@
             border: none;
             border-radius: 10px;
             color: #ffffff;
-            margin: 5px;
             flex: 1;
-            max-width: 150px; /* Limit the width for buttons */
+            max-width: 150px;
+            text-align: center;
         }
         .button-wrapper .set-title-btn { background-color: #b625cc; }
         .button-wrapper .set-icon-btn { background-color: #4caf50; }
