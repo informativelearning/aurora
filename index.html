@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
+    <meta property="og:title" content="Welcome to aurora., a lightweight, fast, and clean site." />
+    <meta property="og:site_name" content="mathematicalframeworks.vercel.app" />
+    <meta property="og:description" content="Welcome to aurora., a lightweight, fast, and clean site." />
+    <meta name="description" content="Welcome to aurora., a lightweight, fast, and clean site." />
+    <meta name="author" content="aurora." />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>aurora.</title>
     <style>
         body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
+            background: #000000; /* Void-like black background */
             margin: 0;
             padding: 0;
+            overflow: hidden;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
         h1 {
@@ -26,7 +31,6 @@
             margin-bottom: 0.5em;
             color: #22c55e;
             text-shadow: 3px 3px 6px #000000;
-            z-index: 10;
         }
 
         #subtitle {
@@ -34,13 +38,11 @@
             margin-bottom: 1.5em;
             color: #cccccc;
             text-shadow: 1px 1px 2px #000000;
-            z-index: 10;
         }
 
         p {
             max-width: 600px;
             margin: 20px auto;
-            z-index: 10;
         }
 
         button {
@@ -53,7 +55,6 @@
             border-radius: 20px;
             margin-top: 20px;
             transition: background-color 0.3s ease;
-            z-index: 10;
         }
 
         button:hover {
@@ -62,7 +63,6 @@
 
         .btn-secondary {
             background-color: #b625cc;
-            z-index: 10;
         }
 
         .btn-secondary:hover {
@@ -71,7 +71,6 @@
 
         .btn-tertiary {
             background-color: #ff8c00;
-            z-index: 10;
         }
 
         .btn-tertiary:hover {
@@ -86,7 +85,6 @@
             color: #cccccc;
             font-size: 0.9em;
             margin-top: 20px;
-            z-index: 10;
         }
 
         .footer a {
@@ -96,23 +94,80 @@
 
         .scribble {
             position: absolute;
+            width: 15vw;
+            height: 15vw;
+            background: rgba(255, 0, 0, 0.3); /* Darker red */
+            border-radius: 50%;
             pointer-events: none;
-            z-index: 1;
-            background: none;
-            mix-blend-mode: difference;
+            mix-blend-mode: screen;
+            animation: scribbleAnimation 1s infinite;
+            opacity: 0;
         }
 
-        .scribble svg {
-            width: 100px;
-            height: 100px;
-            overflow: visible;
+        @keyframes scribbleAnimation {
+            0% { transform: rotate(0deg) translate(0, 0); }
+            100% { transform: rotate(360deg) translate(5px, 5px); }
         }
 
-        .scribble path {
-            stroke: rgba(255, 0, 0, 0.6);
-            stroke-width: 2;
-            fill: none;
-            stroke-linecap: round;
+        .scribble::before,
+        .scribble::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 0, 0, 0.15); /* Darker red */
+            width: 150%;
+            height: 150%;
+            top: -10%;
+            left: -10%;
+            box-shadow:
+                0 0 2px rgba(255, 0, 0, 0.5),
+                0 0 4px rgba(255, 0, 0, 0.5),
+                0 0 8px rgba(255, 0, 0, 0.5),
+                0 0 16px rgba(255, 0, 0, 0.5);
+            animation: scribbleMovement 2s infinite alternate ease-in-out;
+            border-radius: 50%;
+            clip-path: polygon(
+                50% 0%,
+                55% 25%,
+                70% 35%,
+                85% 50%,
+                70% 65%,
+                55% 75%,
+                50% 100%,
+                45% 75%,
+                30% 65%,
+                15% 50%,
+                30% 35%,
+                45% 25%
+            ); /* Create more circular, yet scribbled shapes */
+        }
+
+        @keyframes scribbleMovement {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+
+        body:hover .scribble {
+            opacity: 1;
+        }
+
+        body:hover .scribble:nth-child(even) {
+            animation: scribbleAnimationReverse 1.5s infinite alternate;
+        }
+
+        @keyframes scribbleAnimationReverse {
+            0% { transform: rotate(360deg) translate(0, 0); }
+            100% { transform: rotate(0deg) translate(-5px, -5px); }
+        }
+
+        body:hover .scribble {
+            animation: scribbleAnimation 1.5s infinite alternate;
+            top: calc(50% - 7.5vw);
+            left: calc(50% - 7.5vw);
+        }
+
+        body:hover .scribble:nth-child(odd) {
+            animation: scribbleAnimation 1s infinite alternate;
         }
     </style>
 </head>
@@ -130,37 +185,12 @@
         <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
         Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
     </p>
-
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/subtitle.js"></script>
+    <!-- Include Vercel Analytics script -->
     <script>
-        document.addEventListener('mousemove', function(e) {
-            let scribble = document.createElement('div');
-            scribble.className = 'scribble';
-            scribble.style.top = `${e.pageY}px`;
-            scribble.style.left = `${e.pageX}px`;
-
-            // Creating a chaotic, scribbled path
-            let svgNS = "http://www.w3.org/2000/svg";
-            let svg = document.createElementNS(svgNS, "svg");
-            let path = document.createElementNS(svgNS, "path");
-
-            let d = "";
-            for (let i = 0; i < 6; i++) {
-                let x = Math.random() * 80 - 40;
-                let y = Math.random() * 80 - 40;
-                d += `M0,0 Q${x},${y} ${x*2},${y*2} `;
-            }
-            path.setAttribute("d", d);
-            svg.appendChild(path);
-            scribble.appendChild(svg);
-
-            document.body.appendChild(scribble);
-
-            // Fade out and remove the scribble after a short duration
-            setTimeout(() => {
-                scribble.style.opacity = '0';
-                setTimeout(() => scribble.remove(), 1000);
-            }, 500);
-        });
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
