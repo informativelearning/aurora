@@ -13,11 +13,10 @@
     <title>aurora.</title>
     <style>
         body {
-            background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #121212);
-            background-size: 200% 200%;
-            animation: gradientAnimation 15s ease infinite;
-            color: #ffffff;
-            font-family: 'Courier New', Courier, monospace; /* Webcore-inspired font */
+            background: radial-gradient(circle, rgba(10,10,10,1) 0%, rgba(20,20,20,1) 50%, rgba(10,10,10,1) 100%), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2Utbm9uLXZpc2libGU9InJldmVydGJsZSIgc3Ryb2tlLWxpbmVjbGFzcy1yZXBvc2U9ImF1dG8iIHN0cm9rZS1jb2xvcj0iIzAwMCIgc3Ryb2tlLWxpbmUtY29sb3I9IiMwMDAiLz4KPC9zdmc+Cg==') no-repeat center center fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -28,66 +27,61 @@
             text-align: center;
         }
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-
         h1 {
             font-size: 4em;
             margin-bottom: 0.5em;
-            color: #ff00ff; /* Webcore-style neon color */
-            text-shadow: 3px 3px 6px #000000;
+            color: #cccccc;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
         }
 
         #subtitle {
             font-size: 2.5em;
             margin-bottom: 1.5em;
-            color: #cccccc;
-            text-shadow: 1px 1px 2px #000000;
+            color: #999999;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
         }
 
         p {
             max-width: 600px;
             margin: 20px auto;
+            color: #d0d0d0;
         }
 
         button {
             cursor: pointer;
-            background-color: #ff00ff; /* Webcore-style neon color */
-            border: 2px solid #ffffff; /* Retro-style border */
-            color: #ffffff;
+            background-color: rgba(30, 30, 30, 0.8);
+            border: 1px solid #333333;
+            color: #d0d0d0;
             padding: 15px 32px;
             font-size: 18px;
-            border-radius: 8px; /* Rounded corners for app-like look */
+            border-radius: 20px;
             margin-top: 20px;
             transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #cc00cc;
-            border-color: #cccccc;
+            background-color: rgba(40, 40, 40, 0.9);
+            border-color: #444444;
         }
 
         .btn-secondary {
-            background-color: #00ffff; /* Webcore-style neon color */
-            border: 2px solid #ffffff;
+            background-color: rgba(40, 30, 60, 0.8);
+            border-color: #555555;
         }
 
         .btn-secondary:hover {
-            background-color: #00cccc;
-            border-color: #cccccc;
+            background-color: rgba(50, 40, 80, 0.9);
+            border-color: #666666;
         }
 
         .btn-tertiary {
-            background-color: #ffff00; /* Webcore-style neon color */
-            border: 2px solid #ffffff;
+            background-color: rgba(60, 60, 60, 0.8);
+            border-color: #666666;
         }
 
         .btn-tertiary:hover {
-            background-color: #cccc00;
-            border-color: #cccccc;
+            background-color: rgba(80, 80, 80, 0.9);
+            border-color: #777777;
         }
 
         a {
@@ -95,44 +89,31 @@
         }
 
         .footer {
-            color: #cccccc;
+            color: #999999;
             font-size: 0.9em;
             margin-top: 20px;
         }
 
         .footer a {
-            color: #ff00ff; /* Webcore-style neon color */
+            color: #d0d0d0;
             text-decoration: underline;
-        }
-
-        /* Additional styling for app-like interface */
-        .container {
-            width: 80%;
-            max-width: 800px;
-            padding: 20px;
-            border: 2px solid #ffffff;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>aurora.</h1>
-        <span id="subtitle">Explore and Enjoy!</span>
-        <p>
-            Welcome to aurora., it's a lightweight, lightning fast, and simple site.<br />
-            <a href="/projects.html"><button>Start playing!</button></a><br />
-            <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
-            <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
-        </p>
-        <p class="footer">
-            &copy; aurora. 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
-            <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
-            Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
-        </p>
-    </div>
+    <h1>aurora.</h1>
+    <span id="subtitle">Explore and Enjoy!</span>
+    <p>
+        Welcome to aurora., a lightweight, lightning fast, and simple site.<br />
+        <a href="/projects.html"><button>Start playing!</button></a><br />
+        <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
+        <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
+    </p>
+    <p class="footer">
+        &copy; aurora. 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
+        <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
+        Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
+    </p>
     <script type="module" src="/js/main.js"></script>
     <script type="module" src="/js/subtitle.js"></script>
     <!-- Include Vercel Analytics script -->
