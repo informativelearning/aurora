@@ -13,11 +13,11 @@
     <title>aurora.</title>
     <style>
         body {
-            background: linear-gradient(135deg, #0f0f0f, #202020, #121212);
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #121212);
             background-size: 200% 200%;
             animation: gradientAnimation 15s ease infinite;
             color: #ffffff;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Courier New', Courier, monospace; /* Webcore-inspired font */
             margin: 0;
             padding: 0;
             display: flex;
@@ -35,14 +35,14 @@
         }
 
         h1 {
-            font-size: 3.5em;
+            font-size: 4em;
             margin-bottom: 0.5em;
-            color: #22c55e;
+            color: #ff00ff; /* Webcore-style neon color */
             text-shadow: 3px 3px 6px #000000;
         }
 
         #subtitle {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 1.5em;
             color: #cccccc;
             text-shadow: 1px 1px 2px #000000;
@@ -55,34 +55,39 @@
 
         button {
             cursor: pointer;
-            background-color: #22c55e;
-            border: none;
-            color: white;
+            background-color: #ff00ff; /* Webcore-style neon color */
+            border: 2px solid #ffffff; /* Retro-style border */
+            color: #ffffff;
             padding: 15px 32px;
             font-size: 18px;
-            border-radius: 20px;
+            border-radius: 8px; /* Rounded corners for app-like look */
             margin-top: 20px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #1d9a4f;
+            background-color: #cc00cc;
+            border-color: #cccccc;
         }
 
         .btn-secondary {
-            background-color: #b625cc;
+            background-color: #00ffff; /* Webcore-style neon color */
+            border: 2px solid #ffffff;
         }
 
         .btn-secondary:hover {
-            background-color: #a71aab;
+            background-color: #00cccc;
+            border-color: #cccccc;
         }
 
         .btn-tertiary {
-            background-color: #ff8c00;
+            background-color: #ffff00; /* Webcore-style neon color */
+            border: 2px solid #ffffff;
         }
 
         .btn-tertiary:hover {
-            background-color: #e07b00;
+            background-color: #cccc00;
+            border-color: #cccccc;
         }
 
         a {
@@ -96,25 +101,38 @@
         }
 
         .footer a {
-            color: #22c55e;
+            color: #ff00ff; /* Webcore-style neon color */
             text-decoration: underline;
+        }
+
+        /* Additional styling for app-like interface */
+        .container {
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
-    <h1>aurora.</h1>
-    <span id="subtitle">Explore and Enjoy!</span>
-    <p>
-        Welcome to aurora., its a lightweight, lightning fast, and simple site.<br />
-        <a href="/projects.html"><button>Start playing!</button></a><br />
-        <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
-        <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
-    </p>
-    <p class="footer">
-        &copy; aurora. 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
-        <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
-        Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
-    </p>
+    <div class="container">
+        <h1>aurora.</h1>
+        <span id="subtitle">Explore and Enjoy!</span>
+        <p>
+            Welcome to aurora., it's a lightweight, lightning fast, and simple site.<br />
+            <a href="/projects.html"><button>Start playing!</button></a><br />
+            <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
+            <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
+        </p>
+        <p class="footer">
+            &copy; aurora. 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
+            <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
+            Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
+        </p>
+    </div>
     <script type="module" src="/js/main.js"></script>
     <script type="module" src="/js/subtitle.js"></script>
     <!-- Include Vercel Analytics script -->
