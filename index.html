@@ -13,122 +13,101 @@
     <title>Vermin Supreme's Palace</title>
     <style>
         body {
-            background: linear-gradient(-45deg, #2a2a72, #009ffd, #2a2a72, #009ffd);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background: linear-gradient(135deg, #2a2a72, #009ffd); /* Cool colors gradient */
             color: #ffffff;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Courier New', Courier, monospace; /* Font for a more mysterious vibe */
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            height: 100vh;
             text-align: center;
+            overflow: hidden; /* Hide scrollbars for a more immersive feel */
+            background-image: url('path-to-your-animated-background.gif'); /* Replace with the path to your animated gif */
+            background-size: cover;
+            background-repeat: no-repeat;
         }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         h1 {
-            font-size: 3.5em;
-            margin-bottom: 0.3em;
+            font-size: 4em;
+            margin-bottom: 0.5em;
             color: #22c55e;
-            text-shadow: 3px 3px 6px #000000;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* More intense text shadow */
         }
-
         #subtitle {
-            font-size: 1.8em;
-            margin-bottom: 2em;
-            color: #66fcf1;
+            font-size: 2em;
+            margin-bottom: 1.5em;
+            color: #d0d0d0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Subtle shadow for more depth */
         }
-
-        .content {
-            max-width: 600px;
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
         p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
+            max-width: 700px;
+            margin: 20px auto;
+            line-height: 1.6;
+            font-size: 1.2em;
         }
-
-        .button-container {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
         button {
             cursor: pointer;
             background-color: #22c55e;
             border: none;
-            color: white;
-            padding: 15px 32px;
-            font-size: 16px;
-            border-radius: 20px;
+            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 30px;
             margin-top: 20px;
-            transition: background-color 0.3s ease;
-            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Shadow for depth */
         }
-
         button:hover {
             background-color: #1d9a4f;
+            transform: scale(1.05); /* Slight scale effect on hover */
         }
-
         .btn-secondary {
-            background-color: #5b42f3;
+            background-color: #b625cc;
         }
-
         .btn-secondary:hover {
-            background-color: #4e37d6;
+            background-color: #a71aab;
         }
-
         .btn-tertiary {
-            background-color: #009ffd;
+            background-color: #ff8c00;
         }
-
         .btn-tertiary:hover {
-            background-color: #007ac1;
+            background-color: #e07b00;
         }
-
         a {
             text-decoration: none;
         }
-
         .footer {
             color: #cccccc;
             font-size: 0.9em;
-            margin-top: 30px;
+            margin-top: 20px;
+            line-height: 1.6;
         }
-
         .footer a {
             color: #22c55e;
             text-decoration: underline;
         }
+        /* Animation effect for text */
+        @keyframes glowing {
+            0% { text-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e, 0 0 15px #22c55e, 0 0 20px #22c55e; }
+            50% { text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e, 0 0 30px #22c55e, 0 0 40px #22c55e; }
+            100% { text-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e, 0 0 15px #22c55e, 0 0 20px #22c55e; }
+        }
+        h1, #subtitle {
+            animation: glowing 1.5s infinite;
+        }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>Vermin Supreme's Palace</h1>
-        <span id="subtitle">Explore and Enjoy!</span>
-        <p>Welcome to Vermin Supreme's Palace, a lightweight, lightning fast, and simple site.</p>
-        <div class="button-container">
-            <a href="/projects.html"><button>Start playing!</button></a>
-            <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
-            <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
-        </div>
-    </div>
+    <h1>Vermin Supreme's Palace</h1>
+    <span id="subtitle">Explore and Enjoy!</span>
+    <p>
+        Welcome to Vermin Supreme's Palace, a lightweight, lightning-fast, and simple site.<br />
+        <a href="/projects.html"><button>Start playing!</button></a><br />
+        <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
+        <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
+    </p>
     <p class="footer">
         &copy; Vermin Supreme's Palace, 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
         <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
