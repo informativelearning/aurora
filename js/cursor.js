@@ -1,5 +1,4 @@
-// cursor.js
-document.addEventListener('mousemove', function(e) {
+document.addEventListener('DOMContentLoaded', () => {
     const cursorEffect = document.getElementById('cursor-effect');
     const images = [
         'images/schizoscribble1.png',
@@ -11,8 +10,21 @@ document.addEventListener('mousemove', function(e) {
         'images/schizoscribble7.png'
     ];
 
-    let index = Math.floor(Math.random() * images.length);
-    cursorEffect.style.backgroundImage = `url(${images[index]})`;
-    cursorEffect.style.left = `${e.clientX}px`;
-    cursorEffect.style.top = `${e.clientY}px`;
+    let currentImageIndex = 0;
+    
+    function updateCursorEffect(e) {
+        const { clientX: x, clientY: y } = e;
+        cursorEffect.style.left = `${x - cursorEffect.offsetWidth / 2}px`;
+        cursorEffect.style.top = `${y - cursorEffect.offsetHeight / 2}px`;
+    }
+
+    function setRandomImage() {
+        currentImageIndex = Math.floor(Math.random() * images.length);
+        cursorEffect.style.backgroundImage = `url(${images[currentImageIndex]})`;
+    }
+
+    setRandomImage();
+    setInterval(setRandomImage, 1000); // Change image every second
+
+    document.addEventListener('mousemove', updateCursorEffect);
 });
