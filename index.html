@@ -13,18 +13,19 @@
     <title>aurora.</title>
     <style>
         body {
-            background: #000000; /* Void-like black background */
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: radial-gradient(circle at center, #0d0d0d, #000000);
+            background-size: cover;
             color: #ffffff;
             font-family: 'Arial', sans-serif;
-            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
         }
 
         h1 {
@@ -93,82 +94,16 @@
             text-decoration: underline;
         }
 
-        .scribble {
+        /* Cursor effect styling */
+        #cursor-effect {
             position: absolute;
-            width: 15vw;
-            height: 15vw;
-            background: rgba(255, 0, 0, 0.3); /* Darker red */
-            border-radius: 50%;
+            width: 50px; /* Adjust size as needed */
+            height: 50px; /* Adjust size as needed */
+            background-size: cover;
             pointer-events: none;
-            mix-blend-mode: screen;
-            animation: scribbleAnimation 1s infinite;
-            opacity: 0;
-        }
-
-        @keyframes scribbleAnimation {
-            0% { transform: rotate(0deg) translate(0, 0); }
-            100% { transform: rotate(360deg) translate(5px, 5px); }
-        }
-
-        .scribble::before,
-        .scribble::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 0, 0, 0.15); /* Darker red */
-            width: 150%;
-            height: 150%;
-            top: -10%;
-            left: -10%;
-            box-shadow:
-                0 0 2px rgba(255, 0, 0, 0.5),
-                0 0 4px rgba(255, 0, 0, 0.5),
-                0 0 8px rgba(255, 0, 0, 0.5),
-                0 0 16px rgba(255, 0, 0, 0.5);
-            animation: scribbleMovement 2s infinite alternate ease-in-out;
-            border-radius: 50%;
-            clip-path: polygon(
-                50% 0%,
-                55% 25%,
-                70% 35%,
-                85% 50%,
-                70% 65%,
-                55% 75%,
-                50% 100%,
-                45% 75%,
-                30% 65%,
-                15% 50%,
-                30% 35%,
-                45% 25%
-            ); /* Create more circular, yet scribbled shapes */
-        }
-
-        @keyframes scribbleMovement {
-            0% { transform: rotate(-5deg); }
-            100% { transform: rotate(5deg); }
-        }
-
-        body:hover .scribble {
-            opacity: 1;
-        }
-
-        body:hover .scribble:nth-child(even) {
-            animation: scribbleAnimationReverse 1.5s infinite alternate;
-        }
-
-        @keyframes scribbleAnimationReverse {
-            0% { transform: rotate(360deg) translate(0, 0); }
-            100% { transform: rotate(0deg) translate(-5px, -5px); }
-        }
-
-        body:hover .scribble {
-            animation: scribbleAnimation 1.5s infinite alternate;
-            top: calc(50% - 7.5vw);
-            left: calc(50% - 7.5vw);
-        }
-
-        body:hover .scribble:nth-child(odd) {
-            animation: scribbleAnimation 1s infinite alternate;
+            z-index: 9999;
+            mix-blend-mode: screen; /* Optional, for blending with background */
+            border-radius: 50%; /* Makes it more circle-like */
         }
     </style>
 </head>
@@ -186,6 +121,8 @@
         <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
         Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
     </p>
+    <div id="cursor-effect"></div>
+    <script src="js/cursor.js"></script>
     <script type="module" src="/js/main.js"></script>
     <script type="module" src="/js/subtitle.js"></script>
     <!-- Include Vercel Analytics script -->
