@@ -130,12 +130,12 @@
             scribble.style.top = `${e.pageY + (Math.random() * 30 - 15)}px`;
             scribble.style.left = `${e.pageX + (Math.random() * 30 - 15)}px`;
 
-            // Create the scribble effect with randomness
+            // Create a scribble effect with chaotic paths
             let paths = '';
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 5; i++) {
                 paths += `M${Math.random() * 100},${Math.random() * 100} `;
             }
-            scribble.style.clipPath = `path('${paths}')`;
+            scribble.style.clipPath = `polygon(${paths})`;
 
             document.body.appendChild(scribble);
 
