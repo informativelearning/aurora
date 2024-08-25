@@ -13,9 +13,11 @@
     <title>Vermin Supreme's Palace</title>
     <style>
         body {
-            background: linear-gradient(135deg, #2a2a72, #009ffd); /* Cool colors gradient */
+            background: linear-gradient(135deg, #0f0f0f, #202020, #121212);
+            background-size: 200% 200%;
+            animation: gradientAnimation 15s ease infinite;
             color: #ffffff;
-            font-family: 'Courier New', Courier, monospace; /* Font for a more mysterious vibe */
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -24,78 +26,78 @@
             justify-content: center;
             height: 100vh;
             text-align: center;
-            overflow: hidden; /* Hide scrollbars for a more immersive feel */
-            background-image: url('path-to-your-animated-background.gif'); /* Replace with the path to your animated gif */
-            background-size: cover;
-            background-repeat: no-repeat;
         }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
         h1 {
-            font-size: 4em;
+            font-size: 3.5em;
             margin-bottom: 0.5em;
             color: #22c55e;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* More intense text shadow */
+            text-shadow: 3px 3px 6px #000000;
         }
+
         #subtitle {
             font-size: 2em;
             margin-bottom: 1.5em;
-            color: #d0d0d0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Subtle shadow for more depth */
+            color: #cccccc;
+            text-shadow: 1px 1px 2px #000000;
         }
+
         p {
-            max-width: 700px;
+            max-width: 600px;
             margin: 20px auto;
-            line-height: 1.6;
-            font-size: 1.2em;
         }
+
         button {
             cursor: pointer;
             background-color: #22c55e;
             border: none;
-            color: #ffffff;
-            padding: 15px 30px;
+            color: white;
+            padding: 15px 32px;
             font-size: 18px;
-            border-radius: 30px;
+            border-radius: 20px;
             margin-top: 20px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Shadow for depth */
+            transition: background-color 0.3s ease;
         }
+
         button:hover {
             background-color: #1d9a4f;
-            transform: scale(1.05); /* Slight scale effect on hover */
         }
+
         .btn-secondary {
             background-color: #b625cc;
         }
+
         .btn-secondary:hover {
             background-color: #a71aab;
         }
+
         .btn-tertiary {
             background-color: #ff8c00;
         }
+
         .btn-tertiary:hover {
             background-color: #e07b00;
         }
+
         a {
             text-decoration: none;
         }
+
         .footer {
             color: #cccccc;
             font-size: 0.9em;
             margin-top: 20px;
-            line-height: 1.6;
         }
+
         .footer a {
             color: #22c55e;
             text-decoration: underline;
-        }
-        /* Animation effect for text */
-        @keyframes glowing {
-            0% { text-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e, 0 0 15px #22c55e, 0 0 20px #22c55e; }
-            50% { text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e, 0 0 30px #22c55e, 0 0 40px #22c55e; }
-            100% { text-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e, 0 0 15px #22c55e, 0 0 20px #22c55e; }
-        }
-        h1, #subtitle {
-            animation: glowing 1.5s infinite;
         }
     </style>
 </head>
@@ -103,7 +105,7 @@
     <h1>Vermin Supreme's Palace</h1>
     <span id="subtitle">Explore and Enjoy!</span>
     <p>
-        Welcome to Vermin Supreme's Palace, a lightweight, lightning-fast, and simple site.<br />
+        Welcome to Vermin Supreme's Palace, a lightweight, lightning fast, and simple site.<br />
         <a href="/projects.html"><button>Start playing!</button></a><br />
         <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
         <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
