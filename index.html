@@ -13,69 +13,77 @@
     <title>aurora.</title>
     <style>
         body {
-            background: url('/images/vaporwave.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            color: #e0e0e0;
+            font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             text-align: center;
+            background-color: #000000; /* Void-like black */
+            background-blend-mode: overlay;
+            transition: background-color 0.3s ease;
         }
 
         h1 {
-            font-size: 3.5em;
+            font-size: 4em;
             margin-bottom: 0.5em;
-            color: #22c55e;
-            text-shadow: 3px 3px 6px #000000;
+            color: #d0d0d0;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
         }
 
         #subtitle {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 1.5em;
-            color: #cccccc;
-            text-shadow: 1px 1px 2px #000000;
+            color: #b0b0b0;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
         }
 
         p {
             max-width: 600px;
             margin: 20px auto;
+            color: #e0e0e0;
         }
 
         button {
             cursor: pointer;
-            background-color: #22c55e;
-            border: none;
-            color: white;
+            background-color: rgba(20, 20, 20, 0.8);
+            border: 2px solid #333333;
+            color: #e0e0e0;
             padding: 15px 32px;
             font-size: 18px;
             border-radius: 20px;
             margin-top: 20px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
 
         button:hover {
-            background-color: #1d9a4f;
+            background-color: rgba(40, 40, 40, 0.9);
+            border-color: #444444;
         }
 
         .btn-secondary {
-            background-color: #b625cc;
+            background-color: rgba(30, 20, 50, 0.8);
+            border-color: #555555;
         }
 
         .btn-secondary:hover {
-            background-color: #a71aab;
+            background-color: rgba(50, 30, 70, 0.9);
+            border-color: #666666;
         }
 
         .btn-tertiary {
-            background-color: #ff8c00;
+            background-color: rgba(50, 50, 50, 0.8);
+            border-color: #666666;
         }
 
         .btn-tertiary:hover {
-            background-color: #e07b00;
+            background-color: rgba(70, 70, 70, 0.9);
+            border-color: #777777;
         }
 
         a {
@@ -83,62 +91,36 @@
         }
 
         .footer {
-            color: #cccccc;
+            color: #b0b0b0;
             font-size: 0.9em;
             margin-top: 20px;
         }
 
         .footer a {
-            color: #22c55e;
+            color: #e0e0e0;
             text-decoration: underline;
         }
-        
-        /* Custom Cursor Tracking Effect */
-        body {
-            position: relative;
+
+        /* Custom cursor */
+        body, button {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="red"><circle cx="16" cy="16" r="4"/></svg>'), auto;
         }
 
-        body::before {
-            content: '';
+        /* Scribble effect */
+        .scribble {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            border-radius: 50%;
+            background: rgba(200, 0, 0, 0.7); /* Strong red */
             pointer-events: none;
-            background: radial-gradient(circle, rgba(128,128,128,0.3) 0%, rgba(0,0,0,0) 80%);
-            transition: background-position 0.1s ease-out;
+            z-index: 1000;
         }
-
-        body:hover::before {
-            background-position: center;
-        }
-
-        body:hover {
-            background-position: center;
-        }
-
-        body:hover::before {
-            background-size: 150px 150px;
-        }
-        
-        /* Adjust cursor tracking color */
-        body::before {
-            background-position: 0% 0%;
-            background-size: 150px 150px;
-        }
-        
-        body:hover::before {
-            background-position: var(--cursor-x) var(--cursor-y);
-        }
-
     </style>
 </head>
 <body>
     <h1>aurora.</h1>
     <span id="subtitle">Explore and Enjoy!</span>
     <p>
-        Welcome to aurora., its a lightweight, lightning fast, and simple site.<br />
+        Welcome to aurora., a lightweight, lightning fast, and simple site.<br />
         <a href="/projects.html"><button>Start playing!</button></a><br />
         <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
         <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
@@ -155,5 +137,23 @@
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const x = e.clientX;
+            const y = e.clientY;
+            const body = document.body;
+            const scribbleSize = Math.random() * 40 + 30; // Random scribble size
+            const scribble = document.createElement('div');
+            scribble.classList.add('scribble');
+            scribble.style.width = `${scribbleSize}px`;
+            scribble.style.height = `${scribbleSize}px`;
+            scribble.style.left = `${x - scribbleSize / 2}px`;
+            scribble.style.top = `${y - scribbleSize / 2}px`;
+            document.body.appendChild(scribble);
+            setTimeout(() => {
+                scribble.remove();
+            }, 500); // Scribble fades quickly to create anxiety
+        });
+    </script>
 </body>
 </html>
