@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
+    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, unblocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
     <meta property="og:title" content="Welcome to Vermin Supreme's Palace, a lightweight, fast, and clean site." />
     <meta property="og:site_name" content="mathematicalframeworks.vercel.app" />
     <meta property="og:description" content="Welcome to Vermin Supreme's Palace, a lightweight, fast, and clean site." />
@@ -12,41 +12,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vermin Supreme's Palace</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
         body {
-            background-color: #121212;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: #ffffff;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh; /* Changed to min-height to ensure full viewport height */
+            min-height: 100vh;
             text-align: center;
         }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         h1 {
-            font-size: 3em;
-            margin-bottom: 0.5em;
-            color: #22c55e;
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 0.3em;
+            color: #ff8c00;
+            text-shadow: 3px 3px 6px #000000;
+        }
+
+        #subtitle {
+            font-size: 1.8em;
+            font-weight: 400;
+            margin-bottom: 1.2em;
+            color: #b625cc;
             text-shadow: 2px 2px 4px #000000;
         }
-        #subtitle {
-            font-size: 1.5em;
-            margin-bottom: 1.5em;
-            color: #cccccc;
-        }
+
         p {
             max-width: 600px;
             margin: 20px auto;
         }
-        .button-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px; /* Space between buttons */
-            margin-top: 20px;
-        }
+
         button {
             cursor: pointer;
             background-color: #22c55e;
@@ -55,33 +65,40 @@
             padding: 15px 32px;
             font-size: 16px;
             border-radius: 20px;
+            margin-top: 20px;
             transition: background-color 0.3s ease;
-            flex: 1;
-            max-width: 200px;
         }
+
         button:hover {
             background-color: #1d9a4f;
         }
+
         .btn-secondary {
             background-color: #b625cc;
         }
+
         .btn-secondary:hover {
             background-color: #a71aab;
         }
+
         .btn-tertiary {
             background-color: #ff8c00;
         }
+
         .btn-tertiary:hover {
             background-color: #e07b00;
         }
+
         a {
             text-decoration: none;
         }
+
         .footer {
             color: #cccccc;
             font-size: 0.9em;
             margin-top: 20px;
         }
+
         .footer a {
             color: #22c55e;
             text-decoration: underline;
@@ -91,11 +108,12 @@
 <body>
     <h1>Vermin Supreme's Palace</h1>
     <span id="subtitle">Explore and Enjoy!</span>
-    <div class="button-wrapper">
-        <a href="/projects.html"><button>Start playing!</button></a>
+    <p>
+        Welcome to Vermin Supreme's Palace, a lightweight, lightning-fast, and simple site.<br />
+        <a href="/projects.html"><button>Start playing!</button></a><br />
         <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
         <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
-    </div>
+    </p>
     <p class="footer">
         &copy; Vermin Supreme's Palace, 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
         <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
