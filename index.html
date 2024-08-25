@@ -107,38 +107,37 @@
             position: relative;
         }
 
-        .scribble {
+        #scribble {
             position: absolute;
-            width: 200px;
-            height: 200px;
-            background: transparent;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .scribble-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: scribbleAnimation 0.3s ease-in-out infinite alternate;
             pointer-events: none;
             mix-blend-mode: difference;
         }
 
-        .scribble div {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255,0,0,1) 0%, rgba(0,0,0,0) 80%);
-            transform: scale(1);
-            animation: scribbleAnimation 0.5s infinite alternate;
-        }
-
         @keyframes scribbleAnimation {
             from {
-                transform: scale(0.8) rotate(0deg);
+                transform: scale(1);
+                opacity: 1;
             }
             to {
-                transform: scale(1) rotate(180deg);
+                transform: scale(0.8);
+                opacity: 0.5;
             }
-        }
-
-        @keyframes scribblePosition {
-            0% { left: 0; top: 0; }
-            50% { left: 50%; top: 50%; }
-            100% { left: 100%; top: 100%; }
         }
     </style>
 </head>
@@ -160,21 +159,21 @@
     <div id="scribble"></div>
 
     <script>
-        const scribbleDiv = document.getElementById('scribble');
+        const scribbleContainer = document.getElementById('scribble');
 
         document.addEventListener('mousemove', function(e) {
-            const x = e.clientX - scribbleDiv.offsetWidth / 2;
-            const y = e.clientY - scribbleDiv.offsetHeight / 2;
-            scribbleDiv.style.transform = `translate(${x}px, ${y}px)`;
+            const x = e.clientX - 10;
+            const y = e.clientY - 10;
 
-            const scribble = document.createElement('div');
-            scribble.className = 'scribble';
-            scribble.style.left = `${x}px`;
-            scribble.style.top = `${y}px`;
+            const dot = document.createElement('div');
+            dot.className = 'scribble-dot';
+            dot.style.left = `${x}px`;
+            dot.style.top = `${y}px`;
 
-            scribbleDiv.appendChild(scribble);
+            scribbleContainer.appendChild(dot);
+
             setTimeout(() => {
-                scribbleDiv.removeChild(scribble);
+                scribbleContainer.removeChild(dot);
             }, 300);
         });
     </script>
