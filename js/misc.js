@@ -85,7 +85,7 @@ document.getElementById("create").onclick = function () {
 presetSelect.addEventListener('change', function() {
   switch (this.value) {
     case "canvas":
-      applyUrl('https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon/favicon-32x32.png', 'Canvas');
+      applyUrl('https://img.icons8.com/?size=512&id=oECahFP3ibID&format=png', 'Canvas');
       break;
     case "aeries":
       applyUrl('https://wascouhsd.aeries.net/student/favicon.ico', 'Aeries Student Dashboard');
@@ -103,7 +103,7 @@ document.getElementById('set-title-btn').addEventListener('click', changeTabTitl
 document.getElementById('set-icon-btn').addEventListener('click', changeTabIcon);
 document.getElementById('reset-btn').addEventListener('click', resetTabSettings);
 document.getElementById('imitate-canvas-btn').addEventListener('click', () => {
-  applyUrl('https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon/favicon-32x32.png', 'Canvas');
+  applyUrl('https://img.icons8.com/?size=512&id=oECahFP3ibID&format=png', 'Canvas');
 });
 document.getElementById('imitate-gmail-btn').addEventListener('click', () => {
   applyUrl('https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico', 'Gmail');
