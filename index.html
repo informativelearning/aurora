@@ -22,7 +22,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh; /* Changed to min-height to ensure full viewport height */
             text-align: center;
         }
         h1 {
@@ -40,6 +40,13 @@
             max-width: 600px;
             margin: 20px auto;
         }
+        .button-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px; /* Space between buttons */
+            margin-top: 20px;
+        }
         button {
             cursor: pointer;
             background-color: #22c55e;
@@ -48,8 +55,9 @@
             padding: 15px 32px;
             font-size: 16px;
             border-radius: 20px;
-            margin-top: 20px;
             transition: background-color 0.3s ease;
+            flex: 1;
+            max-width: 200px;
         }
         button:hover {
             background-color: #1d9a4f;
@@ -83,12 +91,11 @@
 <body>
     <h1>Vermin Supreme's Palace</h1>
     <span id="subtitle">Explore and Enjoy!</span>
-    <p>
-        Welcome to Vermin Supreme's Palace, a lightweight, lightning fast, and simple site.<br />
-        <a href="/projects.html"><button>Start playing!</button></a><br />
+    <div class="button-wrapper">
+        <a href="/projects.html"><button>Start playing!</button></a>
         <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
         <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
-    </p>
+    </div>
     <p class="footer">
         &copy; Vermin Supreme's Palace, 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
         <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
