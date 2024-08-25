@@ -1,6 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const cursorEffect = document.getElementById('cursor-effect');
-    const images = [
+document.addEventListener('mousemove', function (e) {
+    var cursorEffect = document.getElementById('cursor-effect');
+    // Position the cursor effect
+    cursorEffect.style.left = (e.clientX - cursorEffect.clientWidth / 2) + 'px';
+    cursorEffect.style.top = (e.clientY - cursorEffect.clientHeight / 2) + 'px';
+});
+
+// Set a random image for the cursor effect from the available images
+function setRandomCursorImage() {
+    var images = [
         'images/schizoscribble1.png',
         'images/schizoscribble2.png',
         'images/schizoscribble3.png',
@@ -9,22 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'images/schizoscribble6.png',
         'images/schizoscribble7.png'
     ];
+    var randomImage = images[Math.floor(Math.random() * images.length)];
+    var cursorEffect = document.getElementById('cursor-effect');
+    cursorEffect.style.backgroundImage = 'url(' + randomImage + ')';
+}
 
-    let currentImageIndex = 0;
-    
-    function updateCursorEffect(e) {
-        const { clientX: x, clientY: y } = e;
-        cursorEffect.style.left = `${x - cursorEffect.offsetWidth / 2}px`;
-        cursorEffect.style.top = `${y - cursorEffect.offsetHeight / 2}px`;
-    }
-
-    function setRandomImage() {
-        currentImageIndex = Math.floor(Math.random() * images.length);
-        cursorEffect.style.backgroundImage = `url(${images[currentImageIndex]})`;
-    }
-
-    setRandomImage();
-    setInterval(setRandomImage, 1000); // Change image every second
-
-    document.addEventListener('mousemove', updateCursorEffect);
-});
+// Set a random image on page load
+setRandomCursorImage();

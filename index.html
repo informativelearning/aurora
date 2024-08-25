@@ -97,15 +97,15 @@
         /* Cursor effect styling */
         #cursor-effect {
             position: absolute;
-            width: 100px; /* Increased size */
-            height: 100px; /* Increased size */
-            background-size: contain; /* Ensure image fits within the div */
-            background-repeat: no-repeat;
+            width: 80px; /* Adjust size as needed */
+            height: 80px; /* Adjust size as needed */
+            background-size: cover;
             pointer-events: none;
             z-index: 9999;
             mix-blend-mode: screen; /* Optional, for blending with background */
-            border-radius: 50%; /* Make it more circle-like */
-            transform: translate(-50%, -50%); /* Center the effect */
+            border-radius: 50%; /* Makes it more circle-like */
+            /* Center the cursor effect image */
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
