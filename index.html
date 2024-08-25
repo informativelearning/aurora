@@ -12,41 +12,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vermin Supreme's Palace</title>
     <style>
-        @keyframes movingBackground {
-            0% { background-position: 0 0; }
-            100% { background-position: 100% 100%; }
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
+
         body {
-            background: linear-gradient(45deg, #222, #333, #444);
-            background-size: 200% 200%;
-            animation: movingBackground 10s linear infinite;
+            background: linear-gradient(-45deg, #ff8c00, #22c55e, #2196f3, #1e88e5);
+            background-size: 400% 400%;
+            animation: backgroundAnimation 15s ease infinite;
             color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
         }
+
         h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 0.5em;
-            color: #22c55e;
-            text-shadow: 2px 2px 4px #000000;
+            color: #ffffff;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
         }
+
         #subtitle {
-            font-size: 1.8em;
+            font-size: 1.7em;
             margin-bottom: 1.5em;
-            color: #ffcc00;
-            text-shadow: 1px 1px 2px #000000;
+            color: #f0f0f0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
+
         p {
             max-width: 600px;
             margin: 20px auto;
         }
+
         button {
             cursor: pointer;
             background-color: #22c55e;
@@ -56,31 +62,40 @@
             font-size: 16px;
             border-radius: 20px;
             margin-top: 20px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         button:hover {
             background-color: #1d9a4f;
+            transform: scale(1.05);
         }
+
         .btn-secondary {
+            background-color: #1e88e5;
+        }
+
+        .btn-secondary:hover {
+            background-color: #1976d2;
+        }
+
+        .btn-tertiary {
             background-color: #ff8c00;
         }
-        .btn-secondary:hover {
+
+        .btn-tertiary:hover {
             background-color: #e07b00;
         }
-        .btn-tertiary {
-            background-color: #0088cc;
-        }
-        .btn-tertiary:hover {
-            background-color: #0072aa;
-        }
+
         a {
             text-decoration: none;
         }
+
         .footer {
-            color: #cccccc;
+            color: #f0f0f0;
             font-size: 0.9em;
             margin-top: 20px;
         }
+
         .footer a {
             color: #22c55e;
             text-decoration: underline;
