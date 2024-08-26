@@ -112,7 +112,7 @@ document.getElementById('set-title-btn').addEventListener('click', changeTabTitl
 document.getElementById('set-icon-btn').addEventListener('click', changeTabIcon);
 document.getElementById('reset-btn').addEventListener('click', resetTabSettings);
 document.getElementById('imitate-canvas-btn').addEventListener('click', () => {
-  applyUrl('https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon/favicon-32x32.png', 'Canvas');
+  applyUrl('https://wascouhsd.instructure.com/favicon.ico', 'Canvas');
 });
 
 
