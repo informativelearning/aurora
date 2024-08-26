@@ -162,15 +162,15 @@
     <div class="section">
         <h1>about:blank</h1>
         <p>Enter a URL you want to be opened in an about:blank page below:</p>
-        <input id="link-input" type="url" pattern="https://.*" placeholder="Enter a website URL" autocomplete="on" />
+        <input id="url-target" type="url" pattern="https://.*" placeholder="Enter a website URL" autocomplete="on" />
         <p>Note: This may not work with some websites. For added privacy, copy the link of this website and use it.</p>
-        <select id="page-select">
+        <select id="apply-presets">
             <option value="">Select a preset</option>
             <option value="canvas">Canvas</option>
             <option value="aeries">Aeries Student Dashboard</option>
             <option value="gmail">Gmail</option>
         </select>
-        <button id="create-page-btn">Create page</button>
+        <button id="create">Create page</button>
     </div>
 
     <!-- Tab Cloaker Section -->
@@ -208,14 +208,18 @@
     <!-- Vercel Analytics Script -->
     <script async src="https://analytics.vercel.com/analytics.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const createPageBtn = document.getElementById('create-page-btn');
-            const linkInput = document.getElementById('link-input');
-            const pageSelect = document.getElementById('page-select');
-            const backToTopBtn = document.getElementById('back-to-top');
+    <!-- Your existing JavaScript code -->
+    <script src="/path/to/misc.js"></script>
 
-            createPageBtn.addEventListener('click', function() {
-                let url = linkInput.value;
-                let preset = pageSelect.value;
-               
+    <script>
+        // Back to Top button functionality
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                document.getElementById('back-to-top').style.display = 'block';
+            } else {
+                document.getElementById('back-to-top').style.display = 'none';
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scroll
