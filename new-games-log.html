@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
+<head>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="keywords" content="front-end web developer, unblocked, games, new games log, updates" />
     <meta property="og:title" content="New Games Log | aurora." />
@@ -10,31 +10,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>New Games Log | aurora.</title>
-  </head>
-  <body style="background-color: #121212; color: #ffffff; font-family: sans-serif;">
-    <h1 style="text-align: center;">New Games Log</h1>
-    <div style="max-width: 800px; margin: auto;">
-      <p>Welcome to the New Games Log! Here you'll find all the updates on new games ill added to the site and those that are planned to be added.</p>
-      
-      <h2>Games Added:</h2>
-      <ul id="games-added">
-        <!-- Example entry -->
-        <li><strong>just added bad time simulator but it's sourced externally and also added awesome tanks 2</strong> - Added on August 20, 2024</li>
-      </ul>
-      
-      <h2>Planned Games:</h2>
-      <ul id="planned-games">
-        <!-- Example entry -->
-        <li><strong>fix friday night funkin, add yohoho, subway surfers, google feud, and fruit ninja</strong> - Planned for sometime this August or September 2024</li>
-      </ul>
-      
-      <p>Check back often for more updates!</p>
-      <a href="/index.html" style="text-decoration: none;">
-        <button style="cursor: pointer; background-color: #22c55e; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 20px; margin-top: 20px;">Go to Homepage</button>
-      </a>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 50px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #22c55e;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 20px;
+            margin: 20px auto;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1da94e;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>New Games Log</h1>
+    <div class="container">
+        <p>Welcome to the New Games Log! Here you'll find all the updates on new games added to the site and those that are planned to be added.</p>
+        
+        <h2>Games Added:</h2>
+        <ul id="games-added">
+            <!-- Example entry -->
+            <li><strong>just added bad time simulator but it's sourced externally and also added awesome tanks 2</strong> - Added on August 20, 2024</li>
+        </ul>
+        
+        <h2>Planned Games:</h2>
+        <ul id="planned-games">
+            <!-- Example entry -->
+            <li><strong>fix friday night funkin, add yohoho, subway surfers, google feud, and fruit ninja</strong> - Planned for sometime this August or September 2024</li>
+        </ul>
+        
+        <p>Check back often for more updates!</p>
+        <a href="/index.html">
+            <button>Go to Homepage</button>
+        </a>
     </div>
     
     <!-- Vercel Analytics -->
     <script src="/_vercel/insights/script.js"></script>
-  </body>
+</body>
 </html>
