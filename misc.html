@@ -5,8 +5,9 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Miscellaneous | aurora.</title>
     <style>
+        /* Your existing CSS code */
         body {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('/images/broken-heart-background.gif') center center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('/images/your-dynamic-background.gif') center center/cover no-repeat;
             color: #ffffff;
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
@@ -56,18 +57,6 @@
             14%, 42% {
                 transform: scale(1.02);
             }
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('/images/broken-heart-overlay.png') center/cover no-repeat;
-            opacity: 0.05;
-            pointer-events: none;
         }
 
         .button-wrapper {
@@ -165,8 +154,6 @@
             100% { clip: rect(85px, 550px, 140px, 0); }
         }
     </style>
-    <!-- Vercel Analytics -->
-    <script src="/_vercel/insights/script.js"></script>
 </head>
 <body>
     <h2 class="glitch" data-text="Miscellaneous stuff">Miscellaneous stuff</h2>
@@ -183,7 +170,7 @@
             <option value="aeries">Aeries Student Dashboard</option>
             <option value="gmail">Gmail</option>
         </select>
-        <button onclick="createPage()">Create page</button>
+        <button id="create-page-btn">Create page</button>
     </div>
 
     <!-- Tab Cloaker Section -->
@@ -216,12 +203,19 @@
         </a>
     </p>
 
-    <button id="back-to-top">↑</button>
+    <button id="back-to-top">↑ Back to Top</button>
+
+    <!-- Vercel Analytics Script -->
+    <script async src="https://analytics.vercel.com/analytics.js"></script>
 
     <script>
-        function createPage() {
-            const url = document.getElementById('link-input').value;
-            const selection = document.getElementById('page-select').value;
-            let title, icon;
+        document.addEventListener('DOMContentLoaded', function() {
+            const createPageBtn = document.getElementById('create-page-btn');
+            const linkInput = document.getElementById('link-input');
+            const pageSelect = document.getElementById('page-select');
+            const backToTopBtn = document.getElementById('back-to-top');
 
-            switch (selection)
+            createPageBtn.addEventListener('click', function() {
+                let url = linkInput.value;
+                let preset = pageSelect.value;
+               
