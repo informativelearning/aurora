@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>Miscellaneous | Vermin Supreme's Palace</title>
+    <title>Miscellaneous | aurora.</title>
     <style>
         body {
             background-color: #121212;
@@ -83,13 +84,12 @@
     <script src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-    <h2>Miscellaneous stuff</h2>
-
+    <h2>Miscellaneous Stuff</h2>
 
     <!-- About:blank Section -->
     <div class="section">
         <h1>about:blank</h1>
-        <p>Enter a URL you want to be opened in a about:blank page below:</p>
+        <p>Enter a URL you want to be opened in an about:blank page below:</p>
         <input id="link-input" type="url" pattern="https://.*" placeholder="Enter a website URL" autocomplete="on" />
         <p>Note this will not work with some websites, but you can copy the link of this website and put it in for extra privacy.</p>
         <select id="page-select">
@@ -98,13 +98,12 @@
             <option value="aeries">Aeries Student Dashboard</option>
             <option value="gmail">Gmail</option>
         </select>
-        <button onclick="createPage()">Create page</button>
+        <button id="create">Create page</button>
     </div>
-
 
     <!-- Tab Cloaker Section -->
     <div class="section">
-        <h1>Tab Cloaker (not working rn)</h1>
+        <h1>Tab Cloaker</h1>
         <p>Enter a new tab title or an image URL below. What you set will be used on the whole site.</p>
         <input id="userinput" type="text" placeholder="Enter a title or image URL" autocomplete="on" />
         <p id="console-output"></p>
@@ -116,15 +115,13 @@
         </div>
     </div>
 
-
     <!-- Ads Consent Section -->
     <div class="section">
         <h1>Ads Consent</h1>
-        <p>Sometimes, ads are shown to support the creator. If you would not like to see ads or it slows down your computer too much, you can disable them here.</p>
+        <p>Sometimes, ads are shown to support the creator. If you would not like to see ads or if it slows down your computer too much, you can disable them here.</p>
         <label for="adConsent">Do not show ads at all:</label>
         <input type="checkbox" id="adConsent" name="adConsent">
     </div>
-
 
     <p style="text-align: center; margin-top: 2em;">
         <a href="/index.html" style="text-decoration: none;">
@@ -134,16 +131,13 @@
         </a>
     </p>
 
-
     <button id="back-to-top">Back to top</button>
-
 
     <script>
         function createPage() {
             const url = document.getElementById('link-input').value;
             const selection = document.getElementById('page-select').value;
             let title, icon;
-
 
             switch (selection) {
                 case 'canvas':
@@ -163,10 +157,8 @@
                     icon = '/favicon.ico'; // Default favicon URL
             }
 
-
             // Open a new about:blank page
             const newWindow = window.open('about:blank', '_blank');
-
 
             // Write HTML content into the new about:blank page
             newWindow.document.open();
@@ -202,7 +194,6 @@
             newWindow.document.close();
         }
 
-
         const backToTopButton = document.getElementById('back-to-top');
         window.onscroll = function () {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -211,7 +202,6 @@
                 backToTopButton.style.display = 'none';
             }
         };
-
 
         backToTopButton.onclick = function () {
             document.body.scrollTop = 0;
