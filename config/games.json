@@ -330,6 +330,11 @@
     "title": "Glass City"
   },
   {
+    "link": "projects/google-feud/index.html",
+    "imgSrc": "projects/google-feud/splash.png",
+    "title": "Google Feud"
+  },
+  {
     "link": "projects/google-snake/index.html",
     "imgSrc": "projects/google-snake/img/snake.png",
     "title": "Google Snake"
