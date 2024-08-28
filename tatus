@@ -1,0 +1,284 @@
+[33mcommit 80276704869cbd3b5d49cd59bd8c85f28ddc1faf[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Tue Aug 27 18:14:16 2024 -0700
+
+    Add .gitattributes file to normalize line endings
+
+[33mcommit 396e86455a5e3d3ae09853d74615645038ded4c0[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Tue Aug 27 18:12:46 2024 -0700
+
+    Normalize line endings
+
+[33mcommit c6be6d6f7b05753f0c92811e76cd2599dc597703[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Mon Aug 26 20:20:37 2024 -0700
+
+    fx index.html
+
+[33mcommit 2807699d0b427fd596e517e684d4b32466d39e5f[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Mon Aug 26 20:18:20 2024 -0700
+
+    crossyroad
+
+[33mcommit 5f67eccc821386320bc8314aa70704fc6f804f91[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Mon Aug 26 20:15:16 2024 -0700
+
+    adding crossyroad
+
+[33mcommit e4f20faf5b88c91cce2ee84e0e3a17cffe032425[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Mon Aug 26 19:42:49 2024 -0700
+
+    fix misic debug
+
+[33mcommit cecff53a2979fa1af565b1aac6ebacfb098a7f1d[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Mon Aug 26 19:35:21 2024 -0700
+
+    change misc
+
+[33mcommit ee81906de50eb1892261431679a21065115b3446[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 20:04:01 2024 -0700
+
+    add not working in tab cloaker
+
+[33mcommit 7f09202e0d7c2a972636c9017426adf660025fe6[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 20:01:21 2024 -0700
+
+    make canvas logo show
+
+[33mcommit 365cbb5ce22649fd4e9ebc43c3326aee43cfd1bd[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 19:50:03 2024 -0700
+
+    back to og working misc
+
+[33mcommit 331267b59cf3ff12d75f0939469df0d168e80b91[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 19:41:58 2024 -0700
+
+    Updating misc
+
+[33mcommit ac1c36eb37ef5f3cdba6bc25da4f61a10444c657[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 19:35:40 2024 -0700
+
+    fixing misc
+
+[33mcommit 1bb887b66334e4d81f14d1585beba5b5730f1dac[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 19:17:50 2024 -0700
+
+    oops made an error and pasted code twice
+
+[33mcommit 9594812203068798e633b5431f47e2cde8652322[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 19:04:06 2024 -0700
+
+    gave misc.html theme to heartbreak
+
+[33mcommit 781a9e964c6e77df2c0ab86ceb943cded2010184[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 18:55:06 2024 -0700
+
+    Updated Misc to what it should be
+
+[33mcommit 5b36ce96647e7a6cbe8225dbe61e297ba4d98460[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 18:41:59 2024 -0700
+
+    Revamp New Games Log Design
+
+[33mcommit df31c78652bcf3c46766c0b11b7f26b139f0ea1b[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 18:25:17 2024 -0700
+
+    Trigger redeployment
+
+[33mcommit 8491301d7b314027437a8433c6f79fe7cbd0e238[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 12:13:31 2024 -0700
+
+    fix cursor issue
+
+[33mcommit bfe7016357fb0dc699d992a7dec04795e67cba1d[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 10:47:59 2024 -0700
+
+    1
+
+[33mcommit 02c90c9f984bd3ae87df6e2a86c926f1822032d7[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 10:32:58 2024 -0700
+
+    change cursor
+
+[33mcommit 030e4c4a366dfa89136355688e30b29a29a455b2[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 10:28:19 2024 -0700
+
+    adding cursor feature and gettting mahes
+
+[33mcommit 8a97a24679ea0be36ec1a5634ad4d94ec7f0df58[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 09:28:10 2024 -0700
+
+    fix thing
+
+[33mcommit 112bb4ed5cabce3083297514c90bd72803bc8195[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 09:22:29 2024 -0700
+
+    circle
+
+[33mcommit 5f1b146ca97d65c45d7458f762eaf21f2c115f1a[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 09:14:19 2024 -0700
+
+    scribble line
+
+[33mcommit 9e54a04cb6e8871a15cca29db5d238c71401a1de[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 09:01:52 2024 -0700
+
+    attempt scribble
+
+[33mcommit a41076eceb080d54ec3d6f1c9e5157d0c57dd8db[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 08:45:51 2024 -0700
+
+    scribble efect
+
+[33mcommit 68490dfb36b45d73ca35f2e46c0ab6e2fc95b2f8[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 08:39:18 2024 -0700
+
+    scirbble effect
+
+[33mcommit 467a9be8d9ecc1e30a7437cdeb8dc1e68097594d[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sun Aug 25 08:30:11 2024 -0700
+
+    update scrible
+
+[33mcommit b8b41a2cf59824edbe4c77eead8e7a896516341e[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 23:55:22 2024 -0700
+
+    changed alot cursor to red and smaller and black background
+
+[33mcommit dcb7e66e260feb668b1281d0835cf423e67d1539[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 23:23:00 2024 -0700
+
+    change background of index
+
+[33mcommit c59180ba917240ecc4fdcd7c483b5dcf39dd106d[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 23:07:21 2024 -0700
+
+    added background
+
+[33mcommit 05f63cd9138f06a5af1eb9cd9c75bf08a170db4b[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 22:50:10 2024 -0700
+
+    add eyeball
+
+[33mcommit ce014caa945fd31f225af583a587c231da05032c[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 22:14:11 2024 -0700
+
+    adding cursor
+
+[33mcommit e072f38b0968e0015374ffd92c8831ae9384aa64[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 22:09:26 2024 -0700
+
+    index
+
+[33mcommit 4bd30f218d697ccbfc20015156780188b7a0aa2f[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 22:01:58 2024 -0700
+
+    index
+
+[33mcommit 89586846565ab03576214edd645c7b931a191d19[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 21:56:23 2024 -0700
+
+    index change
+
+[33mcommit 37cbd5a2df0b76dedaf973966db1eb6e917c7794[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 21:51:13 2024 -0700
+
+    change ui
+
+[33mcommit 885ace2a9de8f2def228a484cbcd8c7554fd50b4[m
+Merge: b6534d9 589465c
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 21:29:22 2024 -0700
+
+    Merge branch 'main' of https://github.com/Ezra-531/3kh0-lite
+
+[33mcommit b6534d96a58a0199b18d284cebfeaa75c8ce903c[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 21:26:05 2024 -0700
+
+    changed index ui
+
+[33mcommit 589465c86cfdcdf7fae74c184a5def012b35c880[m
+Author: Ezra-531 <112780637+Ezra-531@users.noreply.github.com>
+Date:   Sat Aug 24 21:00:15 2024 -0700
+
+    Add files via upload
+
+[33mcommit 907de47bfbcf4ccf0911f04b481b0ba3db616b51[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 20:55:03 2024 -0700
+
+    favicon
+
+[33mcommit b65a06e5590108609c4289b6129364502053248f[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 20:18:16 2024 -0700
+
+    changed name to aurora.
+
+[33mcommit e834ae25e60231b9d6bb71496c8ff76aa1e909d9[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 19:59:17 2024 -0700
+
+    change canvas favicon
+
+[33mcommit 3e2efa2a063f254ad8d93b2625a028407506b1f1[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 19:40:01 2024 -0700
+
+    index.html ui change
+
+[33mcommit 013b00850e2c368c1c80b8942f0c2f044f3e9ab1[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 19:31:47 2024 -0700
+
+    index.html ui change testing
+
+[33mcommit 50cb1efdbd30141af45b0a6a164c80a65fb555fe[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 19:00:33 2024 -0700
+
+    changing index.html messyiness
+
+[33mcommit a14e5dc9dc4737352ae7228970d2b8b9594f0ed3[m
+Author: Ezra-531 <4josephhernandez12@gmail.com>
+Date:   Sat Aug 24 18:52:43 2024 -0700
+
+    change to cooler colors
+
+[33mcommit f6e863837755a39cf7f7fa1069944
