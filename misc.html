@@ -115,6 +115,19 @@
         </div>
     </div>
 
+    <!-- Additional Section -->
+    <div class="section">
+        <h1>Apply Presets</h1>
+        <p>Select a preset below to apply a URL and title:</p>
+        <select id="apply-presets">
+            <option value="">Select a preset</option>
+            <option value="canvas">Canvas</option>
+            <option value="aeries">Aeries Student Dashboard</option>
+            <option value="gmail">Gmail</option>
+        </select>
+        <input id="url-target" type="text" placeholder="Enter a URL for the preset" autocomplete="on" />
+    </div>
+
     <!-- Ads Consent Section -->
     <div class="section">
         <h1>Ads Consent</h1>
@@ -133,80 +146,7 @@
 
     <button id="back-to-top">Back to top</button>
 
-    <script>
-        document.getElementById('create').addEventListener('click', function() {
-            const url = document.getElementById('link-input').value;
-            const selection = document.getElementById('page-select').value;
-            let title, icon;
-
-            switch (selection) {
-                case 'canvas':
-                    title = 'Canvas';
-                    icon = 'https://wascouhsd.instructure.com/favicon.ico'; // Canvas favicon URL
-                    break;
-                case 'aeries':
-                    title = 'Aeries Dashboard';
-                    icon = 'https://wascouhsd.aeries.net/student/favicon.ico'; // Aeries favicon URL
-                    break;
-                case 'gmail':
-                    title = 'Gmail';
-                    icon = 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico'; // Gmail favicon URL
-                    break;
-                default:
-                    title = 'About Blank';
-                    icon = '/favicon.ico'; // Default favicon URL
-            }
-
-            // Open a new about:blank page
-            const newWindow = window.open('about:blank', '_blank');
-            newWindow.document.open();
-            newWindow.document.write(`
-                <!DOCTYPE html>
-                <html lang="en-US">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>${title}</title>
-                    <link rel="icon" href="${icon}" type="image/x-icon">
-                    <style>
-                        html, body {
-                            margin: 0;
-                            padding: 0;
-                            overflow: hidden;
-                            width: 100%;
-                            height: 100%;
-                        }
-                        iframe {
-                            border: none;
-                            width: 100vw;
-                            height: 100vh;
-                            display: block;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <iframe src="${url}" frameborder="0"></iframe>
-                </body>
-                </html>
-            `);
-            newWindow.document.close();
-        });
-
-        const backToTopButton = document.getElementById('back-to-top');
-        window.onscroll = function () {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        };
-
-        backToTopButton.onclick = function () {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        };
-    </script>
-    <script type="module" src="/js/misc.js"></script>
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/misc.js" defer></script>
+    <script type="module" src="/js/main.js" defer></script>
 </body>
 </html>
