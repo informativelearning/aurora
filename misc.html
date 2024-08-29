@@ -40,6 +40,7 @@
             border-radius: 10px;
             background-color: #b625cc;
             color: #ffffff;
+            cursor: pointer; /* Ensure buttons are clearly clickable */
         }
         .button-wrapper button:hover {
             background-color: #a23e9a;
@@ -90,9 +91,11 @@
     <div class="section">
         <h1>about:blank</h1>
         <p>Enter a URL you want to be opened in an about:blank page below:</p>
-        <input id="link-input" type="url" pattern="https://.*" placeholder="Enter a website URL" autocomplete="on" />
+        <!-- Changed ID from 'link-input' to 'url-target' -->
+        <input id="url-target" type="url" pattern="https://.*" placeholder="Enter a website URL" autocomplete="on" />
         <p>Note this will not work with some websites, but you can copy the link of this website and put it in for extra privacy.</p>
-        <select id="page-select">
+        <!-- Changed ID from 'page-select' to 'apply-presets' -->
+        <select id="apply-presets">
             <option value="">Select a preset</option>
             <option value="canvas">Canvas</option>
             <option value="aeries">Aeries Student Dashboard</option>
@@ -133,78 +136,81 @@
 
     <button id="back-to-top">Back to top</button>
 
-    <script type="module">
-        // Utility function to output messages
-        const output = (msg, clr) => {
-            const txt = document.getElementById("console-output");
-            if (txt) {
-                txt.style.color = clr;
-                txt.innerText = msg;
+    <!-- Script for creating about:blank page and other functionalities -->
+    <script>
+        document.getElementById('create').addEventListener('click', function() {
+            const url = document.getElementById('url-target').value;
+            const selection = document.getElementById('apply-presets').value;
+            let title, icon;
+
+            switch (selection) {
+                case 'canvas':
+                    title = 'Canvas';
+                    icon = 'https://wascouhsd.instructure.com/favicon.ico'; // Canvas favicon URL
+                    break;
+                case 'aeries':
+                    title = 'Aeries Dashboard';
+                    icon = 'https://wascouhsd.aeries.net/student/favicon.ico'; // Aeries favicon URL
+                    break;
+                case 'gmail':
+                    title = 'Gmail';
+                    icon = 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico'; // Gmail favicon URL
+                    break;
+                default:
+                    title = 'About Blank';
+                    icon = '/favicon.ico'; // Default favicon URL
+            }
+
+            // Open a new about:blank page
+            const newWindow = window.open('about:blank', '_blank');
+            newWindow.document.open();
+            newWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en-US">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>${title}</title>
+                    <link rel="icon" href="${icon}" type="image/x-icon">
+                    <style>
+                        html, body {
+                            margin: 0;
+                            padding: 0;
+                            overflow: hidden;
+                            width: 100%;
+                            height: 100%;
+                        }
+                        iframe {
+                            border: none;
+                            width: 100vw;
+                            height: 100vh;
+                            display: block;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <iframe src="${url}" frameborder="0"></iframe>
+                </body>
+                </html>
+            `);
+            newWindow.document.close();
+        });
+
+        const backToTopButton = document.getElementById('back-to-top');
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = 'block';
             } else {
-                console.error("Output element not found.");
+                backToTopButton.style.display = 'none';
             }
         };
-
-        // Function to change the tab title
-        const changeTabTitle = () => {
-            const tcInput = document.getElementById("userinput");
-            if (tcInput.value.trim() === "") {
-                window.localStorage.removeItem("title");
-                output("No title entered. Default applied, refresh to see changes", "red");
-            } else {
-                window.localStorage.setItem("title", tcInput.value);
-                document.title = tcInput.value;
-                output("Title change successful", "green");
-            }
-            tcInput.value = "";
+        backToTopButton.onclick = function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         };
-
-        // Function to change the tab icon
-        const changeTabIcon = () => {
-            const tcInput = document.getElementById("userinput");
-            if (tcInput.value.trim() === "") {
-                document.querySelector("link[rel*='icon']").href = "";
-                window.localStorage.removeItem("icon");
-                output("No image entered. Default applied, refresh to see changes", "red");
-            } else if (validURL(tcInput.value)) {
-                document.querySelector("link[rel*='icon']").href = tcInput.value;
-                window.localStorage.setItem("icon", tcInput.value);
-                output("Icon change successful", "green");
-            } else {
-                output("Icon change failed. Make sure you are using a valid URL", "red");
-            }
-            tcInput.value = "";
-        };
-
-        // Function to validate URL
-        const validURL = (str) => {
-            const exp = /^(https?:\/\/)?([\w\d-]+\.)+[\w]{2,}(\/[\w\d-]*)*\/?$/i;
-            return exp.test(str);
-        };
-
-        // Function to reset tab settings
-        const resetTabSettings = () => {
-            ["icon", "title"].forEach(item => window.localStorage.removeItem(item));
-            window.location.reload();
-        };
-
-        // Function to apply Canvas imitation
-        const imitateCanvas = () => {
-            const url = 'https://wascouhsd.instructure.com/favicon.ico';
-            const title = 'Canvas';
-            document.querySelector("link[rel*='icon']").href = url;
-            document.title = title;
-            output("Imitated Canvas successfully", "green");
-        };
-
-        // Event listeners for the buttons
-        document.getElementById('set-title-btn').addEventListener('click', changeTabTitle);
-        document.getElementById('set-icon-btn').addEventListener('click', changeTabIcon);
-        document.getElementById('reset-btn').addEventListener('click', resetTabSettings);
-        document.getElementById('imitate-canvas-btn').addEventListener('click', imitateCanvas);
     </script>
-
-    <script type="module" src="/js/misc.js" defer></script>
-    <script type="module" src="/js/main.js" defer></script>
+    <!-- Ensure that the external scripts are loaded after the DOM elements -->
+    <script type="module" src="/js/misc.js"></script>
+    <script type="module" src="/js/main.js"></script>
 </body>
 </html>
