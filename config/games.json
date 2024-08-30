@@ -500,6 +500,11 @@
     "title": "Pandemic 2"
   },
   {
+    "link": "projects/papasburgeria/index.html",
+    "imgSrc": "projects/papasburgeria/ico.png",
+    "title": "Papa's Burgeria"
+  },
+  {
     "link": "projects/papaspizzaria/index.html",
     "imgSrc": "projects/papaspizzaria/papaspizzaria.jpg",
     "title": "Papa's Pizzaria"
