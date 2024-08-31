@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, ublocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
+    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, unblocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
     <meta property="og:title" content="Welcome to aurora., a lightweight, fast, and clean site." />
     <meta property="og:site_name" content="mathematicalframeworks.vercel.app" />
     <meta property="og:description" content="Welcome to aurora., a lightweight, fast, and clean site." />
@@ -13,7 +13,7 @@
     <title>aurora.</title>
     <style>
         body {
-            background: radial-gradient(circle at center, #0d0d0d, #000000);
+            background: radial-gradient(circle at center, #1a1a1a, #0d0d0d, #000000);
             background-size: cover;
             color: #ffffff;
             font-family: 'Arial', sans-serif;
@@ -26,25 +26,35 @@
             height: 100vh;
             text-align: center;
             overflow: hidden;
+            position: relative;
         }
 
         h1 {
-            font-size: 3.5em;
+            font-size: 4em;
             margin-bottom: 0.5em;
             color: #22c55e;
-            text-shadow: 3px 3px 6px #000000;
+            text-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e, 0 0 60px #22c55e;
+            animation: neon-flicker 2s infinite alternate;
+        }
+
+        @keyframes neon-flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.85; }
+            100% { opacity: 1; }
         }
 
         #subtitle {
-            font-size: 2em;
-            margin-bottom: 1.5em;
+            font-size: 2.2em;
+            margin-bottom: 2em;
             color: #cccccc;
-            text-shadow: 1px 1px 2px #000000;
+            text-shadow: 0 0 10px #cccccc, 0 0 20px #ffffff;
         }
 
         p {
             max-width: 600px;
             margin: 20px auto;
+            font-size: 1.2em;
+            line-height: 1.5;
         }
 
         button {
@@ -56,11 +66,12 @@
             font-size: 18px;
             border-radius: 20px;
             margin-top: 20px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         button:hover {
             background-color: #1d9a4f;
+            transform: scale(1.05);
         }
 
         .btn-secondary {
@@ -94,26 +105,73 @@
             text-decoration: underline;
         }
 
+        /* Animated grid background */
+        .grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px), repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px);
+            z-index: -1;
+            opacity: 0.2;
+            animation: grid-move 10s linear infinite;
+        }
+
+        @keyframes grid-move {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-100px, -100px); }
+        }
+
+        /* Floating orb animation */
+        .orb {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle at center, rgba(34, 197, 94, 0.7), rgba(0, 0, 0, 0));
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite;
+            mix-blend-mode: color-dodge;
+            filter: blur(50px);
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .orb:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .orb:nth-child(2) { top: 70%; left: 60%; animation-delay: 2s; }
+        .orb:nth-child(3) { top: 50%; left: 80%; animation-delay: 4s; }
+        .orb:nth-child(4) { top: 30%; left: 30%; animation-delay: 6s; }
+
         /* Cursor effect styling */
         #cursor-effect {
             position: absolute;
-            width: 80px; /* Adjust size as needed */
-            height: 80px; /* Adjust size as needed */
+            width: 80px;
+            height: 80px;
             background-size: cover;
             pointer-events: none;
             z-index: 9999;
-            mix-blend-mode: screen; /* Optional, for blending with background */
-            border-radius: 50%; /* Makes it more circle-like */
-            /* Center the cursor effect image */
+            mix-blend-mode: screen;
+            border-radius: 50%;
             transform: translate(-50%, -50%);
         }
     </style>
 </head>
 <body>
+    <div class="grid"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    
     <h1>aurora.</h1>
     <span id="subtitle">Explore and Enjoy!</span>
     <p>
-        Welcome to aurora., its a lightweight, lightning fast, and simple site.<br />
+        Welcome to aurora., a lightweight, lightning fast, and simple site.<br />
         <a href="/projects.html"><button>Start playing!</button></a><br />
         <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
         <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
@@ -129,7 +187,7 @@
     <script type="module" src="/js/subtitle.js"></script>
     <!-- Include Vercel Analytics script -->
     <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
