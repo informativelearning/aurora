@@ -31,6 +31,8 @@
             max-width: 90%;
             margin: 0 auto;
             transform: translateY(10%); /* Shift content down */
+            position: relative; /* Added to fix button responsiveness */
+            z-index: 5;
         }
 
         h1 {
@@ -71,6 +73,8 @@
             border-radius: 20px;
             margin-top: 20px;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            position: relative; /* Fix button responsiveness */
+            z-index: 6;
         }
 
         button:hover {
