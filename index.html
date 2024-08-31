@@ -207,9 +207,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             const redirectEnabled = localStorage.getItem('redirectToBlank') === 'true';
 
-            if (redirectEnabled) {
+            if (redirectEnabled && window.name !== "aurora-iframe") {
                 // Open the about:blank page with content
-                const newWindow = window.open('about:blank', '_blank');
+                const newWindow = window.open('about:blank', '_blank', 'noopener,noreferrer');
 
                 if (newWindow) {
                     newWindow.document.write(`
@@ -237,7 +237,7 @@
                             </style>
                         </head>
                         <body>
-                            <iframe src="/index.html" frameborder="0"></iframe>
+                            <iframe src="/index.html" name="aurora-iframe" frameborder="0"></iframe>
                         </body>
                         </html>
                     `);
