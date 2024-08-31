@@ -35,6 +35,7 @@
             color: #22c55e;
             text-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e, 0 0 60px #22c55e;
             animation: neon-flicker 2s infinite alternate;
+            z-index: 10; /* Ensure title is above all other elements */
         }
 
         @keyframes neon-flicker {
@@ -48,6 +49,7 @@
             margin-bottom: 2em;
             color: #cccccc;
             text-shadow: 0 0 10px #cccccc, 0 0 20px #ffffff;
+            z-index: 10; /* Ensure subtitle is above all other elements */
         }
 
         p {
@@ -55,6 +57,7 @@
             margin: 20px auto;
             font-size: 1.2em;
             line-height: 1.5;
+            z-index: 10; /* Ensure paragraph is above all other elements */
         }
 
         button {
@@ -67,6 +70,7 @@
             border-radius: 20px;
             margin-top: 20px;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            z-index: 10; /* Ensure buttons are above all other elements */
         }
 
         button:hover {
@@ -98,6 +102,7 @@
             color: #cccccc;
             font-size: 0.9em;
             margin-top: 20px;
+            z-index: 10; /* Ensure footer is above all other elements */
         }
 
         .footer a {
@@ -113,7 +118,7 @@
             width: 100%;
             height: 100%;
             background: repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px), repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px);
-            z-index: -1;
+            z-index: 1; /* Grid behind other elements */
             opacity: 0.2;
             animation: grid-move 10s linear infinite;
         }
@@ -133,7 +138,7 @@
             animation: float 10s ease-in-out infinite;
             mix-blend-mode: color-dodge;
             filter: blur(50px);
-            z-index: 0;
+            z-index: 2; /* Orbs behind other elements */
         }
 
         @keyframes float {
