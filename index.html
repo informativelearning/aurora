@@ -28,17 +28,15 @@
 
         .content {
             text-align: center;
-            position: relative;
-            z-index: 10;
             max-width: 90%;
             margin: 0 auto;
         }
 
         h1 {
-            font-size: 4em;
+            font-size: 3em;
             margin-bottom: 0.5em;
             color: #22c55e;
-            text-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e, 0 0 60px #22c55e;
+            text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
             animation: neon-flicker 2s infinite alternate;
         }
 
@@ -49,8 +47,8 @@
         }
 
         #subtitle {
-            font-size: 2.2em;
-            margin-bottom: 2em;
+            font-size: 1.5em;
+            margin-bottom: 1.5em;
             color: #cccccc;
             text-shadow: 0 0 10px #cccccc, 0 0 20px #ffffff;
         }
@@ -58,7 +56,7 @@
         p {
             max-width: 600px;
             margin: 20px auto;
-            font-size: 1.2em;
+            font-size: 1.1em;
             line-height: 1.5;
         }
 
@@ -67,8 +65,8 @@
             background-color: #22c55e;
             border: none;
             color: white;
-            padding: 15px 32px;
-            font-size: 18px;
+            padding: 12px 28px;
+            font-size: 16px;
             border-radius: 20px;
             margin-top: 20px;
             transition: background-color 0.3s ease, transform 0.2s ease;
@@ -131,13 +129,13 @@
         /* Floating orb animation */
         .orb {
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             background: radial-gradient(circle at center, rgba(34, 197, 94, 0.7), rgba(0, 0, 0, 0));
             border-radius: 50%;
             animation: float 10s ease-in-out infinite;
             mix-blend-mode: color-dodge;
-            filter: blur(50px);
+            filter: blur(30px);
             z-index: 2;
         }
 
