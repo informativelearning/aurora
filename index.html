@@ -212,7 +212,7 @@
                 const newWindow = window.open('about:blank', '_blank', 'noopener,noreferrer');
 
                 if (newWindow) {
-                    newWindow.document.write(`
+                    const content = `
                         <!DOCTYPE html>
                         <html lang="en-US">
                         <head>
@@ -240,7 +240,9 @@
                             <iframe src="https://mathematicalframeworks.vercel.app/" name="aurora-iframe" frameborder="0"></iframe>
                         </body>
                         </html>
-                    `);
+                    `;
+
+                    newWindow.document.write(content);
                     newWindow.document.close();
                     window.close(); // Close the original window
                 } else {
