@@ -660,6 +660,11 @@
     "title": "Superhot"
   },
   {
+    "link": "projects/subway-surfers/index.html",
+    "imgSrc": "projects/subway-surfers/img/FirstAvatar.png",
+    "title": "Subway Surfers"
+  },
+  {
     "link": "projects/swerve/index.html",
     "imgSrc": "projects/swerve/img/favicon.jpg",
     "title": "Swerve"
