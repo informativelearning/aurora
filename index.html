@@ -208,6 +208,8 @@
             const redirectEnabled = localStorage.getItem('redirectToBlank') === 'true';
 
             if (redirectEnabled && window.name !== "aurora-iframe") {
+                console.log("Redirection enabled, opening about:blank");
+
                 // Open the about:blank page with content
                 const newWindow = window.open('about:blank', '_blank', 'noopener,noreferrer');
 
@@ -244,7 +246,9 @@
 
                     newWindow.document.write(content);
                     newWindow.document.close();
-                    window.close(); // Close the original window
+                    console.log("Content written to about:blank tab");
+
+                    setTimeout(() => window.close(), 1000); // Close the original window after 1 second
                 } else {
                     alert('Pop-up blocked! Please allow pop-ups for this site.');
                 }
