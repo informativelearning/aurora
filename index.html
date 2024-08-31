@@ -19,14 +19,18 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             height: 100vh;
-            text-align: center;
             overflow: hidden;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content {
+            text-align: center;
+            position: relative;
+            z-index: 10;
         }
 
         h1 {
@@ -35,7 +39,6 @@
             color: #22c55e;
             text-shadow: 0 0 20px #22c55e, 0 0 40px #22c55e, 0 0 60px #22c55e;
             animation: neon-flicker 2s infinite alternate;
-            z-index: 10; /* Ensure title is above all other elements */
         }
 
         @keyframes neon-flicker {
@@ -49,7 +52,6 @@
             margin-bottom: 2em;
             color: #cccccc;
             text-shadow: 0 0 10px #cccccc, 0 0 20px #ffffff;
-            z-index: 10; /* Ensure subtitle is above all other elements */
         }
 
         p {
@@ -57,7 +59,6 @@
             margin: 20px auto;
             font-size: 1.2em;
             line-height: 1.5;
-            z-index: 10; /* Ensure paragraph is above all other elements */
         }
 
         button {
@@ -70,7 +71,6 @@
             border-radius: 20px;
             margin-top: 20px;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            z-index: 10; /* Ensure buttons are above all other elements */
         }
 
         button:hover {
@@ -102,7 +102,6 @@
             color: #cccccc;
             font-size: 0.9em;
             margin-top: 20px;
-            z-index: 10; /* Ensure footer is above all other elements */
         }
 
         .footer a {
@@ -118,7 +117,7 @@
             width: 100%;
             height: 100%;
             background: repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px), repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px);
-            z-index: 1; /* Grid behind other elements */
+            z-index: 1;
             opacity: 0.2;
             animation: grid-move 10s linear infinite;
         }
@@ -138,7 +137,7 @@
             animation: float 10s ease-in-out infinite;
             mix-blend-mode: color-dodge;
             filter: blur(50px);
-            z-index: 2; /* Orbs behind other elements */
+            z-index: 2;
         }
 
         @keyframes float {
@@ -173,19 +172,22 @@
     <div class="orb"></div>
     <div class="orb"></div>
     
-    <h1>aurora.</h1>
-    <span id="subtitle">Explore and Enjoy!</span>
-    <p>
-        Welcome to aurora., a lightweight, lightning fast, and simple site.<br />
-        <a href="/projects.html"><button>Start playing!</button></a><br />
-        <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
-        <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
-    </p>
-    <p class="footer">
-        &copy; aurora. 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
-        <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
-        Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
-    </p>
+    <div class="content">
+        <h1>aurora.</h1>
+        <span id="subtitle">Explore and Enjoy!</span>
+        <p>
+            Welcome to aurora., its a lightweight, lightning fast, and simple site.<br />
+            <a href="/projects.html"><button>Start playing!</button></a><br />
+            <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
+            <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
+        </p>
+        <p class="footer">
+            &copy; aurora. 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
+            <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
+            Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
+        </p>
+    </div>
+    
     <div id="cursor-effect"></div>
     <script src="js/cursor.js"></script>
     <script type="module" src="/js/main.js"></script>
