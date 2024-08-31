@@ -600,6 +600,11 @@
     "title": "Snowbattle"
   },
   {
+    "link": "projects/soccer-skills/index.html",
+    "imgSrc": "projects/soccer-skills/splash.png",
+    "title": "Soccer Skills"
+  },
+  {
     "link": "projects/soldier-legend/index.html",
     "imgSrc": "projects/soldier-legend/images/splash.jpeg",
     "title": "Soilder Legend"
