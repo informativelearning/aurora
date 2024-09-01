@@ -214,19 +214,28 @@
                 const newWindow = window.open('about:blank', '_blank', 'noopener,noreferrer');
 
                 if (newWindow) {
-                    // Ensure the newWindow object is usable before writing to it
-                    if (newWindow.document) {
-                        const doc = newWindow.document;
-                        doc.open();
-                        doc.write('<!DOCTYPE html><html lang="en-US"><head><title>aurora.</title></head><body>');
-                        doc.write('<iframe src="/index.html" style="border: none; width: 100vw; height: 100vh;"></iframe>');
-                        doc.write('</body></html>');
-                        doc.close();
-                    } else {
-                        console.error("Failed to open newWindow document.");
-                    }
+                    const checkReadyState = setInterval(function() {
+                        if (newWindow.document.readyState === 'complete') {
+                            clearInterval(checkReadyState);
+
+                            // Write the iframe content to the new window
+                            newWindow.document.write(`
+                                <!DOCTYPE html>
+                                <html lang="en-US">
+                                <head>
+                                    <title>aurora.</title>
+                                    <style>body { margin: 0; }</style>
+                                </head>
+                                <body>
+                                    <iframe src="${window.location.href}" style="border: none; width: 100vw; height: 100vh;"></iframe>
+                                </body>
+                                </html>
+                            `);
+                            newWindow.document.close();
+                        }
+                    }, 10);
                 } else {
-                    console.error("Failed to open newWindow.");
+                    console.log("Failed to open the new window");
                 }
             }
         });
