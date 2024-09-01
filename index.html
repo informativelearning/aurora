@@ -203,37 +203,26 @@
     <script defer src="/_vercel/insights/script.js"></script>
 
     <script>
-        // Check if redirection is enabled
         document.addEventListener('DOMContentLoaded', function() {
-            const redirectEnabled = localStorage.getItem('redirectToBlank') === 'true';
+            const redirectEnabled = localStorage.getItem('redirectEnabled');
 
-            if (redirectEnabled && window.name !== "aurora-iframe") {
-                console.log("Redirection enabled, opening about:blank");
-
-                // Open the about:blank page with content
+            if (redirectEnabled === 'true') {
+                // Open the new window with about:blank
                 const newWindow = window.open('about:blank', '_blank', 'noopener,noreferrer');
 
                 if (newWindow) {
-                    const checkReadyState = setInterval(function() {
-                        if (newWindow.document.readyState === 'complete') {
-                            clearInterval(checkReadyState);
-
-                            // Write the iframe content to the new window
-                            newWindow.document.write(`
-                                <!DOCTYPE html>
-                                <html lang="en-US">
-                                <head>
-                                    <title>aurora.</title>
-                                    <style>body { margin: 0; }</style>
-                                </head>
-                                <body>
-                                    <iframe src="${window.location.href}" style="border: none; width: 100vw; height: 100vh;"></iframe>
-                                </body>
-                                </html>
-                            `);
-                            newWindow.document.close();
-                        }
-                    }, 10);
+                    newWindow.location.replace("data:text/html;charset=utf-8," + encodeURIComponent(`
+                        <!DOCTYPE html>
+                        <html lang="en-US">
+                        <head>
+                            <title>aurora.</title>
+                            <style>body { margin: 0; }</style>
+                        </head>
+                        <body>
+                            <iframe src="${window.location.href}" style="border: none; width: 100vw; height: 100vh;"></iframe>
+                        </body>
+                        </html>
+                    `));
                 } else {
                     console.log("Failed to open the new window");
                 }
