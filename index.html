@@ -214,41 +214,47 @@
                 const newWindow = window.open('about:blank', '_blank', 'noopener,noreferrer');
 
                 if (newWindow) {
-                    const content = `
-                        <!DOCTYPE html>
-                        <html lang="en-US">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                            <title>about:blank</title>
-                            <link rel="icon" href="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBA==" type="image/gif">
-                            <style>
-                                html, body {
-                                    margin: 0;
-                                    padding: 0;
-                                    overflow: hidden;
-                                    width: 100%;
-                                    height: 100%;
-                                }
-                                iframe {
-                                    border: none;
-                                    width: 100vw;
-                                    height: 100vh;
-                                    display: block;
-                                }
-                            </style>
-                        </head>
-                        <body>
-                            <iframe src="https://mathematicalframeworks.vercel.app/" name="aurora-iframe" frameborder="0"></iframe>
-                        </body>
-                        </html>
-                    `;
+                    // Ensure the newWindow object is usable before writing to it
+                    if (newWindow.document) {
+                        const content = `
+                            <!DOCTYPE html>
+                            <html lang="en-US">
+                            <head>
+                                <meta charset="UTF-8">
+                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                <title>about:blank</title>
+                                <link rel="icon" href="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBA==" type="image/gif">
+                                <style>
+                                    html, body {
+                                        margin: 0;
+                                        padding: 0;
+                                        overflow: hidden;
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                    iframe {
+                                        border: none;
+                                        width: 100vw;
+                                        height: 100vh;
+                                        display: block;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                <iframe src="https://mathematicalframeworks.vercel.app/" name="aurora-iframe" frameborder="0"></iframe>
+                            </body>
+                            </html>
+                        `;
 
-                    newWindow.document.write(content);
-                    newWindow.document.close();
-                    console.log("Content written to about:blank tab");
+                        newWindow.document.open();
+                        newWindow.document.write(content);
+                        newWindow.document.close();
+                        console.log("Content written to about:blank tab");
 
-                    setTimeout(() => window.close(), 1000); // Close the original window after 1 second
+                        setTimeout(() => window.close(), 1000); // Close the original window after 1 second
+                    } else {
+                        console.error("Failed to open the new document for writing.");
+                    }
                 } else {
                     alert('Pop-up blocked! Please allow pop-ups for this site.');
                 }
