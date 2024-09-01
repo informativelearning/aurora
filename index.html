@@ -216,30 +216,17 @@
                 if (newWindow) {
                     // Ensure the newWindow object is usable before writing to it
                     if (newWindow.document) {
-                        const content = `
-                            <!DOCTYPE html>
-                            <html lang="en-US">
-                            <head>
-                                <meta charset="UTF-8">
-                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                                <title>About Blank</title>
-                                <style>
-                                    body { background-color: #000; color: #fff; font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-                                    h1 { color: #22c55e; }
-                                </style>
-                            </head>
-                            <body>
-                                <h1>About Blank</h1>
-                                <p>This is a blank page.</p>
-                            </body>
-                            </html>
-                        `;
-                        newWindow.document.open();
-                        newWindow.document.write(content);
-                        newWindow.document.close();
+                        const doc = newWindow.document;
+                        doc.open();
+                        doc.write('<!DOCTYPE html><html lang="en-US"><head><title>aurora.</title></head><body>');
+                        doc.write('<iframe src="/index.html" style="border: none; width: 100vw; height: 100vh;"></iframe>');
+                        doc.write('</body></html>');
+                        doc.close();
+                    } else {
+                        console.error("Failed to open newWindow document.");
                     }
                 } else {
-                    console.error("Failed to open new window.");
+                    console.error("Failed to open newWindow.");
                 }
             }
         });
