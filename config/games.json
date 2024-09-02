@@ -310,6 +310,11 @@
     "title": "fridaynightfunkin"
   },
   {
+    "link": "projects/gachalife/index.html",
+    "imgSrc": "projects/gachalife/gacha.webp",
+    "title": "Gacha Life"
+  },
+  {
     "link": "projects/game-inside/index.html",
     "imgSrc": "projects/game-inside/img/display.png",
     "title": "Game Inside a Game Inside a Game..."
