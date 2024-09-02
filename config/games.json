@@ -580,6 +580,11 @@
     "title": "Rooftop Snipers"
   },
   {
+    "link": "projects/rhythm-doctor/index.html",
+    "imgSrc": "projects/rooftop-snipers/img/preview.png",
+    "title": "Rhythm Doctor"
+  },
+  {
     "link": "projects/sand-game/index.html",
     "imgSrc": "projects/sand-game/sand.png",
     "title": "Sand Game"
