@@ -12,29 +12,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>aurora.</title>
     <style>
-        /* Ensure the entire page has no margin or padding */
         html, body {
             margin: 0;
             padding: 0;
-            width: 100%;
             height: 100%;
             overflow: hidden;
-        }
-
-        body {
             background: radial-gradient(circle at center, #1a1a1a, #0d0d0d, #000000);
             color: #ffffff;
             font-family: 'Arial', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            text-align: center;
         }
 
         .content {
-            text-align: center;
-            max-width: 90%;
-            margin: 0 auto;
-            transform: translateY(10%);
             position: relative;
             z-index: 5;
         }
@@ -117,7 +106,6 @@
             text-decoration: underline;
         }
 
-        /* Animated grid background */
         .grid {
             position: absolute;
             top: 0;
@@ -135,7 +123,6 @@
             to { transform: translate(-100px, -100px); }
         }
 
-        /* Floating orb animation */
         .orb {
             position: absolute;
             width: 200px;
@@ -159,7 +146,6 @@
         .orb:nth-child(3) { top: 50%; left: 80%; animation-delay: 4s; }
         .orb:nth-child(4) { top: 30%; left: 30%; animation-delay: 6s; }
 
-        /* Cursor effect styling */
         #cursor-effect {
             position: absolute;
             width: 80px;
