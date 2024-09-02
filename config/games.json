@@ -310,11 +310,6 @@
     "title": "fridaynightfunkin"
   },
   {
-    "link": "projects/gachalife/index.html",
-    "imgSrc": "projects/gachalife/gacha.webp",
-    "title": "Gacha Life"
-  },
-  {
     "link": "projects/game-inside/index.html",
     "imgSrc": "projects/game-inside/img/display.png",
     "title": "Game Inside a Game Inside a Game..."
@@ -563,11 +558,6 @@
     "link": "projects/retro-bowl/index.html",
     "imgSrc": "projects/retro-bowl/img/icon.jpg",
     "title": "Retro Bowl"
-  },
-  {
-    "link": "projects/roblox%20copy/index.html",
-    "imgSrc": "projects/roblox%20copy/splash.png",
-    "title": "Roblox"
   },
   {
     "link": "projects/rolly-vortex/index.html",
