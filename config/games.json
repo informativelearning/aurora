@@ -117,7 +117,12 @@
   {
     "link": "projects/canyondefense/index.html",
     "imgSrc": "projects/canyondefense/canyondefense.png",
-    "title": "Canyon Defense"
+    "title": "Canyon Defense" 
+  },
+  {
+    "link": "projects/cars-simulator/index.html",
+    "imgSrc": "projects/cars-simulator/splash.png",
+    "title": "Cars Simulator"
   },
   {
     "link": "projects/cell-machine/index.html",
