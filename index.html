@@ -26,6 +26,7 @@
             justify-content: center;
         }
 
+
         .content {
             text-align: center;
             max-width: 90%;
@@ -35,6 +36,7 @@
             z-index: 5;
         }
 
+
         h1 {
             font-size: 3em;
             margin-bottom: 0.5em;
@@ -43,11 +45,13 @@
             animation: neon-flicker 2s infinite alternate;
         }
 
+
         @keyframes neon-flicker {
             0% { opacity: 1; }
             50% { opacity: 0.85; }
             100% { opacity: 1; }
         }
+
 
         #subtitle {
             font-size: 1.5em;
@@ -56,12 +60,14 @@
             text-shadow: 0 0 10px #cccccc, 0 0 20px #ffffff;
         }
 
+
         p {
             max-width: 600px;
             margin: 20px auto;
             font-size: 1.1em;
             line-height: 1.5;
         }
+
 
         button {
             cursor: pointer;
@@ -77,30 +83,37 @@
             z-index: 6;
         }
 
+
         button:hover {
             background-color: #1d9a4f;
             transform: scale(1.05);
         }
 
+
         .btn-secondary {
             background-color: #b625cc;
         }
+
 
         .btn-secondary:hover {
             background-color: #a71aab;
         }
 
+
         .btn-tertiary {
             background-color: #ff8c00;
         }
+
 
         .btn-tertiary:hover {
             background-color: #e07b00;
         }
 
+
         a {
             text-decoration: none;
         }
+
 
         .footer {
             color: #cccccc;
@@ -108,10 +121,12 @@
             margin-top: 20px;
         }
 
+
         .footer a {
             color: #22c55e;
             text-decoration: underline;
         }
+
 
         /* Animated grid background */
         .grid {
@@ -126,10 +141,12 @@
             animation: grid-move 10s linear infinite;
         }
 
+
         @keyframes grid-move {
             from { transform: translate(0, 0); }
             to { transform: translate(-100px, -100px); }
         }
+
 
         /* Floating orb animation */
         .orb {
@@ -144,16 +161,19 @@
             z-index: 2;
         }
 
+
         @keyframes float {
             0% { transform: translate(0, 0); }
             50% { transform: translate(50px, 50px); }
             100% { transform: translate(0, 0); }
         }
 
+
         .orb:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
         .orb:nth-child(2) { top: 70%; left: 60%; animation-delay: 2s; }
         .orb:nth-child(3) { top: 50%; left: 80%; animation-delay: 4s; }
         .orb:nth-child(4) { top: 30%; left: 30%; animation-delay: 6s; }
+
 
         /* Cursor effect styling */
         #cursor-effect {
@@ -175,7 +195,7 @@
     <div class="orb"></div>
     <div class="orb"></div>
     <div class="orb"></div>
-    
+   
     <div class="content">
         <h1>aurora.</h1>
         <span id="subtitle">Explore and Enjoy!</span>
@@ -188,27 +208,49 @@
         <p class="footer">
             &copy; aurora. 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
             <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
-            Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>!
+            Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
         </p>
     </div>
-
+   
     <div id="cursor-effect"></div>
+    <script src="js/cursor.js"></script>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/subtitle.js"></script>
+    <!-- Include Vercel Analytics script -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const redirectEnabled = localStorage.getItem("redirectEnabled") === "true";
-            if (redirectEnabled) {
-                const blankWindow = window.open("about:blank", "_blank");
-                blankWindow.document.write('<iframe src="' + window.location.href + '" style="width: 100%; height: 100%; border: none;"></iframe>');
+        document.addEventListener('DOMContentLoaded', function() {
+            const redirectEnabled = localStorage.getItem('redirectEnabled');
+
+
+            if (redirectEnabled === 'true') {
+                // Open the new window with about:blank
+                const newWindow = window.open('about:blank', '_blank', 'noopener,noreferrer');
+
+
+                if (newWindow) {
+                    newWindow.location.replace("data:text/html;charset=utf-8," + encodeURIComponent(`
+                        <!DOCTYPE html>
+                        <html lang="en-US">
+                        <head>
+                            <title>aurora.</title>
+                            <style>body { margin: 0; }</style>
+                        </head>
+                        <body>
+                            <iframe src="${window.location.href}" style="border: none; width: 100vw; height: 100vh;"></iframe>
+                        </body>
+                        </html>
+                    `));
+                } else {
+                    console.log("Failed to open the new window");
+                }
             }
         });
-    </script>
-    <script src="/js/cursor.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/subtitle.js"></script>
-    <script>
-        import { inject } from '@vercel/analytics';
-        inject();
     </script>
 </body>
 </html>
