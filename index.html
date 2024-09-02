@@ -12,21 +12,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>aurora.</title>
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
+        body {
             background: radial-gradient(circle at center, #1a1a1a, #0d0d0d, #000000);
+            background-size: cover;
             color: #ffffff;
             font-family: 'Arial', sans-serif;
-            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
+
         .content {
+            text-align: center;
+            max-width: 90%;
+            margin: 0 auto;
+            transform: translateY(10%);
             position: relative;
             z-index: 5;
         }
+
 
         h1 {
             font-size: 3em;
@@ -36,11 +45,13 @@
             animation: neon-flicker 2s infinite alternate;
         }
 
+
         @keyframes neon-flicker {
             0% { opacity: 1; }
             50% { opacity: 0.85; }
             100% { opacity: 1; }
         }
+
 
         #subtitle {
             font-size: 1.5em;
@@ -49,12 +60,14 @@
             text-shadow: 0 0 10px #cccccc, 0 0 20px #ffffff;
         }
 
+
         p {
             max-width: 600px;
             margin: 20px auto;
             font-size: 1.1em;
             line-height: 1.5;
         }
+
 
         button {
             cursor: pointer;
@@ -70,30 +83,37 @@
             z-index: 6;
         }
 
+
         button:hover {
             background-color: #1d9a4f;
             transform: scale(1.05);
         }
 
+
         .btn-secondary {
             background-color: #b625cc;
         }
+
 
         .btn-secondary:hover {
             background-color: #a71aab;
         }
 
+
         .btn-tertiary {
             background-color: #ff8c00;
         }
+
 
         .btn-tertiary:hover {
             background-color: #e07b00;
         }
 
+
         a {
             text-decoration: none;
         }
+
 
         .footer {
             color: #cccccc;
@@ -101,28 +121,34 @@
             margin-top: 20px;
         }
 
+
         .footer a {
             color: #22c55e;
             text-decoration: underline;
         }
 
+
+        /* Animated grid background */
         .grid {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             background: repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px), repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px);
             z-index: 1;
             opacity: 0.2;
             animation: grid-move 10s linear infinite;
         }
 
+
         @keyframes grid-move {
             from { transform: translate(0, 0); }
             to { transform: translate(-100px, -100px); }
         }
 
+
+        /* Floating orb animation */
         .orb {
             position: absolute;
             width: 200px;
@@ -135,17 +161,21 @@
             z-index: 2;
         }
 
+
         @keyframes float {
             0% { transform: translate(0, 0); }
             50% { transform: translate(50px, 50px); }
             100% { transform: translate(0, 0); }
         }
 
+
         .orb:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
         .orb:nth-child(2) { top: 70%; left: 60%; animation-delay: 2s; }
         .orb:nth-child(3) { top: 50%; left: 80%; animation-delay: 4s; }
         .orb:nth-child(4) { top: 30%; left: 30%; animation-delay: 6s; }
 
+
+        /* Cursor effect styling */
         #cursor-effect {
             position: absolute;
             width: 80px;
@@ -165,7 +195,7 @@
     <div class="orb"></div>
     <div class="orb"></div>
     <div class="orb"></div>
-    
+   
     <div class="content">
         <h1>aurora.</h1>
         <span id="subtitle">Explore and Enjoy!</span>
@@ -181,7 +211,7 @@
             Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
         </p>
     </div>
-    
+   
     <div id="cursor-effect"></div>
     <script src="js/cursor.js"></script>
     <script type="module" src="/js/main.js"></script>
@@ -192,20 +222,30 @@
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 
+
     <!-- about:blank redirection logic -->
     <script>
-        if (window.top === window.self) {
-            const iframe = document.createElement('iframe');
-            iframe.src = window.location.href;
-            iframe.style.position = 'absolute';
-            iframe.style.top = '0';
-            iframe.style.left = '0';
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            iframe.style.border = 'none';
-            document.body.innerHTML = ''; // Clear the body content
-            document.body.appendChild(iframe);
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const redirectEnabled = localStorage.getItem('redirectToBlank') === 'true';
+            const isInsideIframe = window.self !== window.top; // Check if the script is running inside an iframe
+
+
+            if (redirectEnabled && !isInsideIframe) { // Only run if redirect is enabled and not inside an iframe
+                const newWindow = window.open('about:blank', '_blank');
+
+
+                if (newWindow) {
+                    newWindow.document.write('<iframe src="' + window.location.href + '" style="border:none; width:100%; height:100vh;"></iframe>');
+                    newWindow.document.close();
+                } else {
+                    console.log("Popup blocked or failed to open about:blank tab.");
+                }
+            }
+        });
     </script>
 </body>
 </html>
+
+
+
+
