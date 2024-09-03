@@ -297,7 +297,12 @@
   {
     "link": "projects/flappy-2048/index.html",
     "imgSrc": "projects/flappy-2048/meta/apple-touch-icon.png",
-    "title": "Flappy 2048"
+    "title": "Flappy 2048"  
+  },
+  {
+    "link": "projects/fancypantsadventures",
+    "imgSrc": "projects/fancypantsadventures/fancypantsadventure.png",
+    "title": "Fancy Pants Adventures"
   },
   {
     "link": "projects/flappy-bird/index.html",
