@@ -460,6 +460,11 @@
     "title": "Minecraft Classic"
   },
   {
+    "link": "projects/madalin-stunt-cars-3/index.html",
+    "imgSrc": "projects/madalin-stunt-cars-3/img/index.jpg",
+    "title": "Madalin Stunt Cars"
+  },
+  {
     "link": "projects/minesweeper/index.html",
     "imgSrc": "projects/minesweeper/img/minesweeper.png",
     "title": "Minesweeper"
