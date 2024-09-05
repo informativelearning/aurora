@@ -575,6 +575,11 @@
     "title": "Retro Bowl"
   },
   {
+    "link": "projects/Rocket-League/index.html",
+    "imgSrc": "projects/Rocket-League/splash.pngg",
+    "title": "Rocket League"
+  },
+  {
     "link": "projects/rolly-vortex/index.html",
     "imgSrc": "projects/rolly-vortex/icon-256.png",
     "title": "Rolly Vortex"
