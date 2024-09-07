@@ -245,6 +245,11 @@
     "title": "Draw the Hill"
   },
   {
+    "link": "projects/drift-boss/index.html",
+    "imgSrc": "projects/ducklife1/ducklife.png",
+    "title": "Drift Boss"
+  },
+  {
     "link": "projects/ducklife1/index.html",
     "imgSrc": "projects/ducklife1/ducklife.png",
     "title": "Duck Life"
