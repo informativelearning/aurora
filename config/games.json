@@ -320,6 +320,11 @@
     "title": "Flash Tetris"
   },
   {
+    "link": "projects/fnaf-3/index.html",
+    "imgSrc": "projects/fnaf-3/fnaf-3.png",
+    "title": "Fnaf 3"
+  },
+  {
     "link": "projects/fridaynightfunkin/index.html",
     "imgSrc": "projects/fridaynightfunkin/fnf-icon.jpg",
     "title": "fridaynightfunkin"
