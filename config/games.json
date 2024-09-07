@@ -580,8 +580,13 @@
     "title": "Retro Bowl"
   },
   {
+    "link": "projects/retro-bowl-college/index.html",
+    "imgSrc": "projects/retro-bowl-college/unnamed.png",
+    "title": "Retro Bowl College"
+  },
+  {
     "link": "projects/Rocket-League/index.html",
-    "imgSrc": "projects/Rocket-League/splash.pngg",
+    "imgSrc": "projects/Rocket-League/splash.png",
     "title": "Rocket League"
   },
   {
