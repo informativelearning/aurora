@@ -257,7 +257,7 @@
   {
     "link": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://738501629-461082748261058427.preview.editmysite.com/uploads/b/139890129-817510652323129407/files/drbo.xml&container=ig",
     "imgSrc": "images/drift-boss1.png",
-    "title": "Drift Boss"
+    "title": "Drift Boss(external)"
   },
   {
     "link": "projects/ducklife1/index.html",
@@ -330,6 +330,11 @@
     "title": "Flash Tetris"
   },
   {
+    "link": "https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Ffive-nights-at-freddy-s.xml&container=ig",
+    "imgSrc": "images/fnaf1.png",
+    "title": "Fnaf 1(external)"
+  },
+  {
     "link": "projects/fnaf-3/index.html",
     "imgSrc": "projects/fnaf-3/fnaf-3.png",
     "title": "Fnaf 3"
@@ -392,7 +397,7 @@
   {
     "link": "https://s6jf3nx0gk1d6n-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/8c491f21-7353-4f1f-b2a0-9544824c4d28%2Fhobo.xml&container=ig",
     "imgSrc": "projects/hobogame.png",
-    "title": "Hobo"
+    "title": "Hobo (external)"
   },
   {
     "link": "projects/hba/index.html",
@@ -612,7 +617,7 @@
   {
     "link": "https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fsk1bx%2Fversion%40f8de953e5d955baef80e3994a1105d74ad76315b%2FRooftop-Snipers.xml&container=ig",
     "imgSrc": "projects/rooftop-snipers/img/preview.png",
-    "title": "Rooftop Snipers"
+    "title": "Rooftop Snipers(external)"
   },
   {
     "link": "projects/sand-game/index.html",
@@ -627,7 +632,7 @@
   {
     "link": "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/bobydob/JSEngine@d94624d12066e1ce30e89c48a687868a26d5c1eb/build/bts-sans/bts.xml&container=ig&quo",
     "imgSrc": "projects/sansgame.jpg",
-    "title": "Bad time"
+    "title": "Bad time(external)"
   },
   {
     "link": "projects/sm64/index.html",
