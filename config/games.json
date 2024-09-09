@@ -140,6 +140,11 @@
     "title": "Champion Archer"
   },
   {
+    "link": "projects/chess/index.html",
+    "imgSrc": "projects/chess/chess1.jpg",
+    "title": "Chess"
+  },
+  {
     "link": "projects/chrome-dino/index.html",
     "imgSrc": "projects/chrome-dino/icons/icon-256.png",
     "title": "Chrome Dino"
