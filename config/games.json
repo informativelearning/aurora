@@ -330,6 +330,11 @@
     "title": "Fnaf 3"
   },
   {
+    "link": "projects/fnaf-4/index.html",
+    "imgSrc": "projects/fnaf-4/thumb.png",
+    "title": "Fnaf 4"
+  },
+  {
     "link": "FNF.html",
     "imgSrc": "projects/fridaynightfunkin/fnf-icon.jpg",
     "title": "fridaynightfunkin (click on controller for mods)"
