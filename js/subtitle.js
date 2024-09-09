@@ -77,6 +77,7 @@ function getRandomGreeting() {
     "life is meaningless without victories",
     "Fact: im better than fabritzio at soccer",
     "i do not understand understanding, cociousneess help dualist no im going insane not even articulating a good sentence i wantto be a pony and live in a hut in the jungle and i hate myself but i dont what im sorry ",
+    "I am a tech wiz as the youngins would say it"
     "I spent too much time making these",
   ];
   var randomIndex = Math.floor(Math.random() * greetings.length);
