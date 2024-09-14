@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Miscellaneous | aurora.</title>
+
+    <!-- Authentication Script (at the top chat) -->
+    <script>
+        // Check if the user is authenticated
+        if (!localStorage.getItem('authenticated')) {
+            window.location.href = '/authentication.html';
+        }
+    </script>
+
     <style>
         body {
             background: radial-gradient(circle at center, #1a1a1a, #0d0d0d, #000000);
