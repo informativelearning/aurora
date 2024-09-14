@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Access Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding-top: 100px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #22c55e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Please Enter the Access Code</h1>
+    <input type="text" id="access-code" placeholder="Enter Code" />
+    <br>
+    <button onclick="validateCode()">Submit</button>
+    <p class="error" id="error-message"></p>
+
+    <script>
+        function validateCode() {
+            const enteredCode = document.getElementById('access-code').value;
+
+            // Send the code to the server for validation
+            fetch('/validate-code', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ code: enteredCode })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // If the code is valid, redirect to the main site
+                    window.location.href = '/index.html';
+                } else {
+                    document.getElementById('error-message').textContent = 'Invalid code. Please try again.';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('error-message').textContent = 'An error occurred. Please try again.';
+            });
+        }
+    </script>
+
+</body>
+</html>
