@@ -1,11 +1,182 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en-US">
+<head>
     <title>404 Error | Aurora.</title>
-  </head>
-  <body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            background: radial-gradient(circle at center, #1a1a1a, #0d0d0d, #000000);
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #ff8c00;
+            text-shadow: 0 0 10px #ff8c00, 0 0 20px #ff8c00;
+            animation: neon-flicker 2s infinite alternate;
+        }
+
+        @keyframes neon-flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.85; }
+            100% { opacity: 1; }
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        a {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            color: #ffffff;
+            background-color: #22c55e;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #1da94e;
+        }
+
+        .orb {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at center, rgba(34, 197, 94, 0.7), rgba(0, 0, 0, 0));
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite;
+            mix-blend-mode: color-dodge;
+            filter: blur(30px);
+            z-index: 1;
+        }
+
+        .orb:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .orb:nth-child(2) { top: 70%; left: 60%; animation-delay: 2s; }
+        .orb:nth-child(3) { top: 50%; left: 80%; animation-delay: 4s; }
+        .orb:nth-child(4) { top: 30%; left: 30%; animation-delay: 6s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    
     <h1>404 Error</h1>
     <p>Page not found. Whomp whomp bro :(</p>
     <a href="/">Go to Homepage</a>
-  </body>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>404 Error | Aurora.</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            background: radial-gradient(circle at center, #1a1a1a, #0d0d0d, #000000);
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #ff8c00;
+            text-shadow: 0 0 10px #ff8c00, 0 0 20px #ff8c00;
+            animation: neon-flicker 2s infinite alternate;
+        }
+
+        @keyframes neon-flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.85; }
+            100% { opacity: 1; }
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        a {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            color: #ffffff;
+            background-color: #22c55e;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #1da94e;
+        }
+
+        .orb {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at center, rgba(34, 197, 94, 0.7), rgba(0, 0, 0, 0));
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite;
+            mix-blend-mode: color-dodge;
+            filter: blur(30px);
+            z-index: 1;
+        }
+
+        .orb:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .orb:nth-child(2) { top: 70%; left: 60%; animation-delay: 2s; }
+        .orb:nth-child(3) { top: 50%; left: 80%; animation-delay: 4s; }
+        .orb:nth-child(4) { top: 30%; left: 30%; animation-delay: 6s; }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    
+    <h1>404 Error</h1>
+    <p>Page not found. Whomp whomp bro :(</p>
+    <a href="/">Go to Homepage</a>
+</body>
 </html>
