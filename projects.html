@@ -242,6 +242,16 @@
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
+    
+    <!-- Authentication check and redirection -->
+    <script>
+        (function() {
+            const isAuthenticated = localStorage.getItem('authenticated');
+            if (!isAuthenticated) {
+                window.location.href = '/authentication.html';
+            }
+        })();
+    </script>
 
     <script>
         let games = [];
