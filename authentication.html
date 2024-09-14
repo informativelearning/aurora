@@ -79,6 +79,10 @@
                 if (response.ok) {
                     messageElement.textContent = result.message;
                     messageElement.style.color = 'green';
+                    // Set authentication flag in localStorage
+                    localStorage.setItem('authenticated', 'true');
+                    // Redirect to home page or intended destination
+                    window.location.href = '/';
                 } else {
                     messageElement.textContent = result.message;
                     messageElement.style.color = 'red';
