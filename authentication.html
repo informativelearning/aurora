@@ -6,18 +6,33 @@
     <title>Authentication</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: radial-gradient(circle at center, #1a1a1a, #0d0d0d, #000000);
+            background-size: cover;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
             height: 100vh;
-            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         .container {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #22c55e;
+            text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
+            margin-bottom: 20px;
         }
         .form-group {
             margin-bottom: 15px;
@@ -25,25 +40,40 @@
         .form-group label {
             display: block;
             margin-bottom: 5px;
+            color: #cccccc;
         }
         .form-group input {
             width: 100%;
             padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background: #222;
+            color: #ffffff;
             box-sizing: border-box;
         }
         .form-group button {
-            padding: 10px 15px;
-            background-color: #007bff;
+            padding: 10px 20px;
+            background-color: #22c55e;
             border: none;
+            border-radius: 8px;
             color: #fff;
             cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .form-group button:hover {
-            background-color: #0056b3;
+            background-color: #1d9a4f;
+            transform: scale(1.05);
         }
         .message {
             margin-top: 15px;
             font-weight: bold;
+        }
+        .message.success {
+            color: #22c55e;
+        }
+        .message.error {
+            color: #ff4d4d;
         }
     </style>
 </head>
@@ -78,19 +108,19 @@
 
                 if (response.ok) {
                     messageElement.textContent = result.message;
-                    messageElement.style.color = 'green';
+                    messageElement.className = 'message success';
                     // Set authentication flag in localStorage
                     localStorage.setItem('authenticated', 'true');
                     // Redirect to home page or intended destination
                     window.location.href = '/';
                 } else {
                     messageElement.textContent = result.message;
-                    messageElement.style.color = 'red';
+                    messageElement.className = 'message error';
                 }
             } catch (error) {
                 console.error('Error:', error);
                 messageElement.textContent = 'An error occurred.';
-                messageElement.style.color = 'red';
+                messageElement.className = 'message error';
             }
         }
     </script>
