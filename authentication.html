@@ -51,6 +51,9 @@
             color: #ffffff;
             box-sizing: border-box;
         }
+        .form-group input[type="password"] {
+            font-family: 'Arial', sans-serif;
+        }
         .form-group button {
             padding: 10px 20px;
             background-color: #22c55e;
@@ -75,6 +78,15 @@
         .message.error {
             color: #ff4d4d;
         }
+        .toggle-password {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #cccccc;
+            cursor: pointer;
+        }
+        .toggle-password:hover {
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -82,7 +94,8 @@
         <h1>Enter Authentication Code</h1>
         <div class="form-group">
             <label for="code">Code:</label>
-            <input type="text" id="code" name="code" placeholder="Enter code">
+            <input type="password" id="code" name="code" placeholder="Enter code" autocomplete="off">
+            <span class="toggle-password" onclick="togglePassword()">Show code</span>
         </div>
         <div class="form-group">
             <button onclick="submitCode()">Submit</button>
@@ -91,6 +104,19 @@
     </div>
 
     <script>
+        // Toggle visibility of the password input
+        function togglePassword() {
+            const codeInput = document.getElementById('code');
+            const togglePasswordText = document.querySelector('.toggle-password');
+            if (codeInput.type === 'password') {
+                codeInput.type = 'text';
+                togglePasswordText.textContent = 'Hide code';
+            } else {
+                codeInput.type = 'password';
+                togglePasswordText.textContent = 'Show code';
+            }
+        }
+
         async function submitCode() {
             const code = document.getElementById('code').value;
             const messageElement = document.getElementById('message');
@@ -119,7 +145,7 @@
                 }
             } catch (error) {
                 console.error('Error:', error);
-                messageElement.textContent = 'got it wrong buddy';
+                messageElement.textContent = 'An error occurred.';
                 messageElement.className = 'message error';
             }
         }
