@@ -250,6 +250,11 @@
     "title": "Double Wires"
   },
   {
+    "link": "projects/DOOMORI/index.html",
+    "imgSrc": "projects/DOOMORI/splash.png",
+    "title": "DOOMORI(my fav game)" 
+  },
+  {
     "link": "projects/draw-the-hill/index.html",
     "imgSrc": "projects/draw-the-hill/icons/icon-512.png",
     "title": "Draw the Hill"
