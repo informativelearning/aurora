@@ -260,6 +260,11 @@
     "title": "Drift Boss(external)"
   },
   {
+    "link": "projects/drift-hunters/index.html",
+    "imgSrc": "projects/drift-hunters/icon.png",
+    "title": "Drift Hunters"
+  },
+  {
     "link": "projects/ducklife1/index.html",
     "imgSrc": "projects/ducklife1/ducklife.png",
     "title": "Duck Life"
