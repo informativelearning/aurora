@@ -74,16 +74,6 @@ checkPageClose2()
 </script-->
 <!--PageScript1-->
 <link rel="manifest" href="manifest.json">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C78TXR0XFK');
-</script>
-<script src="./GobalSettings.js"></script>
 
 <meta
 name="keywords"
@@ -382,6 +372,21 @@ color: white;
       sports_esports
       </span>
 </div>
+<!-- Include Vercel Analytics script -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+<!-- Authentication check and redirection -->
+<script>
+  (function() {
+      const isAuthenticated = localStorage.getItem('authenticated');
+      if (!isAuthenticated) {
+          window.location.href = '/authentication.html';
+      }
+  })();
+</script>
   </body>
 
   <script>
