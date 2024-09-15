@@ -8,7 +8,7 @@ export default function handler(req, res) {
     if (code === VALID_CODE) {
       res.status(200).json({ message: 'Access granted' });
     } else {
-      res.status(403).json({ message: 'Forbidden' });
+      res.status(403).json({ message: 'try again lil bro' });
     }
   } else {
     res.setHeader('Allow', ['POST']);
