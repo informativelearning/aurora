@@ -735,6 +735,11 @@
     "title": "Subway Surfers"
   },
   {
+    "link": "projects/suika/index.html",
+    "imgSrc": "projects/suika/suika.jpg",
+    "title": "Suika"
+  },
+  {
     "link": "projects/swerve/index.html",
     "imgSrc": "projects/swerve/img/favicon.jpg",
     "title": "Swerve"
