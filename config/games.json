@@ -637,7 +637,12 @@
   {
     "link": "projects/russian-car-driver/index.html",
     "imgSrc": "projects/russian-car-driver/russian-car-driver.webp",
-    "title": "Russian Car Driver"
+    "title": "Russian Car Driver" 
+  },
+  {
+    "link": "projects/run-3/icon.jpeg",
+    "imgSrc": "projects/run-3/index.html",
+    "title": "Run 3(might be laggy)"
   },
   {
     "link": "projects/sand-game/index.html",
