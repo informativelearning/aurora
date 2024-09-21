@@ -415,6 +415,11 @@
     "title": "Hacker Typer"
   },
   {
+    "link": "projects/happyhop/index.html",
+    "imgSrc": "projects/happyhop/splash.png",
+    "title": "Happy Hop"
+  },
+  {
     "link": "projects/happywheels/index.html",
     "imgSrc": "projects/happywheels/b.png",
     "title": "Happy Wheels"
