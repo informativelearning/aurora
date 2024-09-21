@@ -7,7 +7,6 @@
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes"> 
 
-    <!-- Updated to relative paths -->
     <script type="text/javascript" src="lib/howler.min.js"></script>
     <script type="text/javascript" src="lib/pako.min.js"></script>
     <script type="text/javascript" src="lib/FileSaver.min.js"></script>
@@ -22,7 +21,6 @@
             event.preventDefault();
         }, { capture: false, passive: false });
 
-        // Function to handle device pixel ratio
         function adjustViewport() {
             if (typeof window.devicePixelRatio !== 'undefined' && window.devicePixelRatio > 2) {
                 const meta = document.getElementById("viewport");
@@ -31,6 +29,15 @@
         }
 
         adjustViewport();
+
+        // Check API functionality
+        window.h5api.checkAPI();
+
+        // Add a basic callback to the API for debugging
+        window.h5api.getRank = function(callback) {
+            console.log("getRank called.");
+            if (callback) callback([]);
+        };
     </script>
 
     <style>
@@ -54,7 +61,6 @@
 
         window.devicePixelRatio = 3;
 
-        // Ensure the lime object is defined before embedding
         if (typeof lime !== "undefined") {
             if (isPc) {
                 lime.embed("HxwzHaxe", "content", 800, 480);
