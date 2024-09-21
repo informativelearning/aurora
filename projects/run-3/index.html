@@ -30,17 +30,22 @@
       // Intercept requests for external SWF files
       const originalFetch = window.fetch;
       window.fetch = async function (resource, options) {
-        // Handle both string URLs and Request objects
-        let url = typeof resource === 'string' ? resource : resource.url;
+        // Ensure resource is defined and has a URL
+        if (resource && (typeof resource === 'string' || (typeof resource === 'object' && resource.url))) {
+          let url = typeof resource === 'string' ? resource : resource.url;
 
-        // If the resource is the external API_AS3_Local.swf, redirect to local file
-        if (url.includes('API_AS3_Local.swf')) {
-          console.log('Intercepting and redirecting API_AS3_Local.swf to local file');
-          url = "/projects/run-3/API_AS3_Local.swf";  // Local path
+          // If the resource is the external API_AS3_Local.swf, redirect to local file
+          if (url.includes('API_AS3_Local.swf')) {
+            console.log('Intercepting and redirecting API_AS3_Local.swf to local file');
+            url = "/projects/run-3/API_AS3_Local.swf";  // Local path
+          }
+
+          // Continue with the modified or original request
+          return originalFetch(url, options);
         }
 
-        // Continue with the modified or original request
-        return originalFetch(url, options);
+        // If resource is undefined or invalid, pass the request as is
+        return originalFetch(resource, options);
       };
     </script>
   </body>
