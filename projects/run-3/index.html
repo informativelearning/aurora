@@ -22,8 +22,21 @@
         player.style.width = "100%";
         player.style.height = "100%";
         container.appendChild(player);
+
+        // Load the main SWF file
         player.load("/projects/run-3/Run%203.swf");
       });
+
+      // Intercept requests for external SWF files
+      const originalFetch = window.fetch;
+      window.fetch = async function (resource, options) {
+        // If the resource is the external API_AS3_Local.swf, redirect to local file
+        if (resource.includes('API_AS3_Local.swf')) {
+          console.log('Intercepting and redirecting API_AS3_Local.swf to local file');
+          resource = "/projects/run-3/API_AS3_Local.swf";  // Local path
+        }
+        return originalFetch(resource, options);
+      };
     </script>
   </body>
 </html>
