@@ -351,9 +351,9 @@
             const reader = new FileReader();
             reader.onload = function (e) {
               document.body.style.backgroundImage = `url(${e.target.result})`;
-              document.body.style.backgroundSize = 'cover';        // Ensures the image covers the entire background
-              document.body.style.backgroundPosition = 'center';   // Centers the image
-              document.body.style.backgroundRepeat = 'no-repeat';  // Prevents the image from repeating
+              document.body.style.backgroundSize = 'contain';        // Ensures the image is fully visible and scaled
+              document.body.style.backgroundPosition = 'center';     // Centers the image
+              document.body.style.backgroundRepeat = 'no-repeat';    // Prevents the image from repeating
             };
             reader.readAsDataURL(file);
           } else {
@@ -361,6 +361,7 @@
           }
         });
       </script>
+      
             
 
     <script type="module" src="/js/misc.js" defer></script>
