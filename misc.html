@@ -351,14 +351,17 @@
             const reader = new FileReader();
             reader.onload = function (e) {
               document.body.style.backgroundImage = `url(${e.target.result})`;
-              document.body.style.backgroundSize = 'cover'; // Adjust as needed (e.g., contain, cover, repeat)
+              document.body.style.backgroundSize = 'cover';        // Ensures the image covers the entire background
+              document.body.style.backgroundPosition = 'center';   // Centers the image
+              document.body.style.backgroundRepeat = 'no-repeat';  // Prevents the image from repeating
             };
             reader.readAsDataURL(file);
           } else {
             alert('Please select an image file!');
           }
         });
-      </script>      
+      </script>
+            
 
     <script type="module" src="/js/misc.js" defer></script>
     <script type="module" src="/js/main.js" defer></script>
