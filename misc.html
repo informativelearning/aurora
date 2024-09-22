@@ -350,7 +350,7 @@
             const reader = new FileReader();
             reader.onload = function (e) {
               document.body.style.backgroundImage = `url(${e.target.result})`;
-              document.body.style.backgroundSize = 'contain';       // Contain image to fit entire screen
+              document.body.style.backgroundSize = 'cover';         // Cover entire screen
               document.body.style.backgroundPosition = 'center';    // Center the image
               document.body.style.backgroundRepeat = 'no-repeat';   // Prevent repetition
               document.body.style.backgroundAttachment = 'fixed';   // Keeps background fixed during scroll
@@ -362,8 +362,7 @@
           }
         });
       </script>
-            
-      
+                  
   
     <script type="module" src="/js/misc.js" defer></script>
     <script type="module" src="/js/main.js" defer></script>
