@@ -343,17 +343,18 @@
     <script>
         const bgUploader = document.getElementById('bgUploader');
         const setBgButton = document.getElementById('setBgButton');
-      
+     
         setBgButton.addEventListener('click', function () {
           const file = bgUploader.files[0];
-      
+     
           if (file) {
             const reader = new FileReader();
             reader.onload = function (e) {
               document.body.style.backgroundImage = `url(${e.target.result})`;
-              document.body.style.backgroundSize = 'contain';        // Ensures the image is fully visible and scaled
+              document.body.style.backgroundSize = 'cover';          // Makes sure the image covers the whole background
               document.body.style.backgroundPosition = 'center';     // Centers the image
               document.body.style.backgroundRepeat = 'no-repeat';    // Prevents the image from repeating
+              document.body.style.backgroundAttachment = 'fixed';    // Ensures the background stays fixed during scrolling
             };
             reader.readAsDataURL(file);
           } else {
