@@ -350,11 +350,12 @@
             const reader = new FileReader();
             reader.onload = function (e) {
               document.body.style.backgroundImage = `url(${e.target.result})`;
-              document.body.style.backgroundSize = 'cover';         // Cover entire screen
+              document.body.style.backgroundSize = '95%';           // Slightly reduce size for border
               document.body.style.backgroundPosition = 'center';    // Center the image
               document.body.style.backgroundRepeat = 'no-repeat';   // Prevent repetition
               document.body.style.backgroundAttachment = 'fixed';   // Keeps background fixed during scroll
-              document.body.style.backgroundColor = '#000';         // Black background for any empty space
+              document.body.style.backgroundColor = '#000';         // Black background around the image
+              document.body.style.padding = '2%';                   // Add padding around the image
             };
             reader.readAsDataURL(file);
           } else {
@@ -362,7 +363,7 @@
           }
         });
       </script>
-                  
+                        
   
     <script type="module" src="/js/misc.js" defer></script>
     <script type="module" src="/js/main.js" defer></script>
