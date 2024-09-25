@@ -122,8 +122,13 @@
             const code = document.getElementById('code').value;
             const messageElement = document.getElementById('message');
 
+            // Determine the correct fetch URL based on the environment
+            const fetchUrl = window.location.hostname.includes('netlify.app') 
+                ? '/.netlify/functions/auth' 
+                : '/api/auth';  // Assuming this is the Vercel function path
+
             try {
-                const response = await fetch('/api/auth', {
+                const response = await fetch(fetchUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -136,13 +141,11 @@
                 if (response.ok) {
                     messageElement.textContent = result.message;
                     messageElement.className = 'message success';
-                    // Set authentication flag in localStorage
                     localStorage.setItem('authenticated', 'true');
-                    // Redirect to home page or intended destination
                     window.location.href = '/';
                 } else {
                     messageElement.textContent = result.message;
-                    messageElement.className = 'got it wrong lil bro, pay up(unless u already bought it then W)';
+                    messageElement.className = 'message error';
                 }
             } catch (error) {
                 console.error('Error:', error);
