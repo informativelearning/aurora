@@ -545,6 +545,11 @@
     "title": "MotoX3M Spooky"
   },
   {
+    "link": "projects/launcha-libre/index.html",
+    "imgSrc": "projects/launcha-libre/libre.jpg",
+    "title": "Launche Libre"
+  },
+  {
     "link": "projects/motox3m-winter/index.html",
     "imgSrc": "projects/motox3m-winter/download.jpeg",
     "title": "MotoX3M Winter"
