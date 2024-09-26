@@ -625,6 +625,11 @@
     "title": "Push Your Luck"
   },
   {
+    "link": "projects/raftwars2/index.html",
+    "imgSrc": "projects/raftwars2/raftwars2.png",
+    "title": "Raft Wars 2"
+  },
+  {
     "link": "projects/retro-bowl/index.html",
     "imgSrc": "projects/retro-bowl/img/icon.jpg",
     "title": "Retro Bowl"

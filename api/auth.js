@@ -1,7 +1,7 @@
 // api/auth.js
 
 export default function handler(req, res) {
-  const VALID_CODE = '!@4002naoiR';
+  const VALID_CODE = 'rqgp7vdt7zy';
 
   if (req.method === 'POST') {
     const { code } = req.body;
