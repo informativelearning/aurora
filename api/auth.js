@@ -1,12 +1,19 @@
-// api/auth.js
+// api/auth.js 
+
+// Ideally, you can store this in an environment variable
+// You can change this without redeploying if using environment variables.
+const VALID_CODE = process.env.AUTH_CODE || 'rqgp7vdt7zy';  // Use env variable for security
 
 export default function handler(req, res) {
-  const VALID_CODE = 'rqgp7vdt7zy';
-
   if (req.method === 'POST') {
     const { code } = req.body;
+    
+    // Compare the entered code with the valid code
     if (code === VALID_CODE) {
-      res.status(200).json({ message: 'Access granted' });
+      res.status(200).json({ 
+        message: 'Access granted', 
+        version: 'v2'  // Include the current version in the response if necessary
+      });
     } else {
       res.status(403).json({ message: 'try again lil bro' });
     }

@@ -104,8 +104,16 @@
         <div id="message" class="message"></div>
     </div>
 
-
     <script>
+        const currentVersion = 'v2';  // Update this version whenever you reset the password
+
+        // Check if user is already authenticated and with the correct version
+        if (localStorage.getItem('authenticated') === 'true' && localStorage.getItem('authVersion') === currentVersion) {
+            window.location.href = '/';  // Redirect if already authenticated
+        } else {
+            localStorage.clear();  // Clear old authentication if version doesn't match
+        }
+
         // Toggle visibility of the password input
         function togglePassword() {
             const codeInput = document.getElementById('code');
@@ -119,17 +127,14 @@
             }
         }
 
-
         async function submitCode() {
             const code = document.getElementById('code').value;
             const messageElement = document.getElementById('message');
-
 
             // Determine the correct fetch URL based on the environment
             const fetchUrl = window.location.hostname.includes('netlify.app')
                 ? '/.netlify/functions/auth'
                 : '/api/auth';  // Assuming this is the Vercel function path
-
 
             try {
                 const response = await fetch(fetchUrl, {
@@ -140,15 +145,14 @@
                     body: JSON.stringify({ code })
                 });
 
-
                 const result = await response.json();
-
 
                 if (response.ok) {
                     messageElement.textContent = result.message;
                     messageElement.className = 'message success';
                     localStorage.setItem('authenticated', 'true');
-                    window.location.href = '/';
+                    localStorage.setItem('authVersion', currentVersion);  // Store the version after successful login
+                    window.location.href = '/';  // Redirect after success
                 } else {
                     messageElement.textContent = result.message;
                     messageElement.className = 'message error';
@@ -162,4 +166,3 @@
     </script>
 </body>
 </html>
-
