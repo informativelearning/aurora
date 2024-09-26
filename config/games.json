@@ -42,7 +42,12 @@
   {
     "link": "projects/awesometanks2/index.html",
     "imgSrc": "projects/awesometanks2/awesometanks2.jpg",
-    "title": "Awesome Tanks 2"
+    "title": "Awesome Tanks 2" 
+  },
+  {
+    "link": "projects/badgta/index.html",
+    "imgSrc": "projects/badgta/logo.jpg",
+    "title": "Knock off GTA" 
   },
   {
     "link": "projects/backrooms/index.html",
