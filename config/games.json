@@ -547,7 +547,7 @@
   {
     "link": "projects/launcha-libre/index.html",
     "imgSrc": "projects/launcha-libre/libre.jpg",
-    "title": "BURRITO BISON"
+    "title": "Burrito Bison"
   },
   {
     "link": "projects/motox3m-winter/index.html",
@@ -662,7 +662,12 @@
   {
     "link": "projects/sand-game/index.html",
     "imgSrc": "projects/sand-game/sand.png",
-    "title": "Sand Game"
+    "title": "Sand Game" 
+  },
+  {
+    "link": "projects/sandtrix/index.html",
+    "imgSrc": "projects/sandtrix/sandtrix.jpg",
+    "title": "Sandtrix"
   },
   {
     "link": "projects/slope/index.html",
