@@ -547,7 +547,7 @@
   {
     "link": "projects/launcha-libre/index.html",
     "imgSrc": "projects/launcha-libre/libre.jpg",
-    "title": "Launche Libre"
+    "title": "BURRITO BISON"
   },
   {
     "link": "projects/motox3m-winter/index.html",
@@ -855,6 +855,11 @@
     "title": "Vex 6"
   },
   {
+    "link": "projects/weavesilk/index.html",
+    "imgSrc": "projects/weavesilk/thumb.png",
+    "title": "Weavesilk"
+  },
+  {
     "link": "projects/webretro-local/index.html",
     "imgSrc": "projects/webretro-local/assets/icon204.png",
     "title": "Web Retro Local"
@@ -883,6 +888,11 @@
     "link": "projects/wounded-summer-baby-edition/index.html",
     "imgSrc": "projects/wounded-summer-baby-edition/wounded-summer-baby-edition.jpg",
     "title": "Wounded Summe Baby Edition(one of my favs)"
+  },
+  {
+    "link": "projects/xx142-b2exe/index.html",
+    "imgSrc": "projects/xx142-b2exe/splash.png",
+    "title": "xx142-b2exe"
   },
   {
     "link": "projects/you-are-bezos/index.html",
