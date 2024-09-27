@@ -1,5 +1,8 @@
 // analytics.js
 (function() {
+  // Check if the user is on the authentication page
+  if (window.location.pathname === '/authentication.html') return;
+
   // Check if the user is authenticated and has the correct version
   const currentVersion = 'v2'; // Update this version whenever you reset the password
   const isAuthenticated = localStorage.getItem('authenticated');
