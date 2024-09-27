@@ -88,14 +88,5 @@
 
         <!-- Vercel Analytics -->
     <script src="/_vercel/insights/script.js"></script>
-    <!-- Authentication check and redirection -->
-    <script>
-        (function() {
-            const isAuthenticated = localStorage.getItem('authenticated');
-            if (!isAuthenticated) {
-                window.location.href = '/authentication.html';
-            }
-        })();
-    </script>
   </body>
 </html>
