@@ -2,7 +2,7 @@
 
 // Ideally, you can store this in an environment variable
 // You can change this without redeploying if using environment variables.
-const VALID_CODE = process.env.AUTH_CODE || 'rqgp7vdt7zy';  // Use env variable for security
+const VALID_CODE = process.env.AUTH_CODE || 'rqgp7vdt7zy';  // Update with the new code
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
@@ -12,10 +12,10 @@ export default function handler(req, res) {
     if (code === VALID_CODE) {
       res.status(200).json({ 
         message: 'Access granted', 
-        version: 'v2'  // Include the current version in the response if necessary
+        version: 'v3'  // Update the version here as well
       });
     } else {
-      res.status(403).json({ message: 'try again lil bro' });
+      res.status(403).json({ message: 'PAY FOR THE FUCKING WEBSITE YOU MONGRAL' });
     }
   } else {
     res.setHeader('Allow', ['POST']);
