@@ -15,7 +15,7 @@ export default function handler(req, res) {
         version: 'v3'  // Update the version here as well
       });
     } else {
-      res.status(403).json({ message: 'PAY FOR THE FUCKING WEBSITE YOU MONGRAL' });
+      res.status(403).json({ message: 'PAY FOR THE FUCKING WEBSITE YOU MONGREL' });
     }
   } else {
     res.setHeader('Allow', ['POST']);
