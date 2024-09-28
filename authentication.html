@@ -111,7 +111,8 @@
         if (localStorage.getItem('authenticated') === 'true' && localStorage.getItem('authVersion') === currentVersion) {
             window.location.href = '/';  // Redirect if already authenticated
         } else {
-            localStorage.clear();  // Clear old authentication if version doesn't match
+            localStorage.removeItem('authenticated');  // Remove only authentication-related data
+            localStorage.removeItem('authVersion');    // Remove the old auth version
         }
 
         // Toggle visibility of the password input
