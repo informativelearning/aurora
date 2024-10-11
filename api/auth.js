@@ -17,7 +17,7 @@ export default function handler(req, res) {
         version: AUTH_VERSION  // Send the current authentication version back to the client
       });
     } else {
-      res.status(403).json({ message: 'Invalid code. Please try again.' });
+      res.status(403).json({ message: 'PAY FOR THE FUCKING WEBSITE YOU MONGREL(Please and thank you😊😃)' });
     }
   } else {
     // Method not allowed if not a POST request
