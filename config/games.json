@@ -130,6 +130,11 @@
     "title": "Cars Simulator"
   },
   {
+    "link": "projects/castlevaniadawnofsorrow/index.html",
+    "imgSrc": "projects/castlevaniadawnofsorrow/splash.png",
+    "title": "Castlevania Dawn of Sorrow (No image yet)"
+  },
+  {
     "link": "projects/cell-machine/index.html",
     "imgSrc": "projects/cell-machine/img/te9nDu.png",
     "title": "Cell Machine"
@@ -371,7 +376,7 @@
   },
   {
     "link": "projects/gravitysoccer/index.html",
-    "imgSrc": "gravitysoccer/images/menutitulo-sheet0.png",
+    "imgSrc": "projects/gravitysoccer/images/menutitulo-sheet0.png",
     "title": "Gravity Soccer"
   },
   {
