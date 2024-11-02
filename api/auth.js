@@ -1,10 +1,10 @@
 // api/auth.js
 
 // Ideally, store this in environment variables for security
-const VALID_CODE = process.env.AUTH_CODE || 'rqgp7vdt7zy';  // Authentication code from environment variable or fallback
+const VALID_CODE = process.env.AUTH_CODE || 'cogitoergosum';  // Authentication code from environment variable or fallback
 
 // Version for invalidating authentication; update this to invalidate all authenticated users
-const AUTH_VERSION = process.env.AUTH_VERSION || 'v4';  // Change this version to force re-authentication
+const AUTH_VERSION = process.env.AUTH_VERSION || 'v5';  // Change this version to force re-authentication
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
