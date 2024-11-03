@@ -4,13 +4,15 @@
   if (window.location.pathname === '/authentication.html') return;
 
   // Check if the user is authenticated and has the correct version
-  const currentVersion = 'v3'; // Update this version whenever you reset the password
+  const currentVersion = 'v5'; // Update this version whenever you reset the password
   const isAuthenticated = localStorage.getItem('authenticated');
   const storedVersion = localStorage.getItem('authVersion');
 
-  // If the user is not authenticated or the stored version is outdated, clear cache and redirect
+  // If the user is not authenticated or the stored version is outdated,
+  // only remove authentication-related data and redirect
   if (!isAuthenticated || storedVersion !== currentVersion) {
-      localStorage.clear(); // Clear old authentication data
+      localStorage.removeItem('authenticated'); // Clear only authentication-related data
+      localStorage.removeItem('authVersion');   // Clear the old auth version
       window.location.href = '/authentication.html'; // Redirect to authentication page
   }
 
