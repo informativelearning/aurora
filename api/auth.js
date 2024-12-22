@@ -4,10 +4,11 @@ async function submitCode() {
     const code = document.getElementById('code').value;
     const messageElement = document.getElementById('message');
 
-    const isFleek = window.location.hostname.includes('fleek.app');
-    
+    const isFleek = window.location.hostname.includes('fleek.co');
+
     if (isFleek) {
-        if (btoa(code) === obfuscatedCode) {  // Compare encoded input
+        // Direct comparison for Fleek, skip serverless call
+        if (btoa(code) === obfuscatedCode) {
             messageElement.textContent = 'Access granted';
             messageElement.className = 'message success';
             localStorage.setItem('authenticated', 'true');
@@ -20,14 +21,10 @@ async function submitCode() {
         return;
     }
 
-    // Server-side authentication for Vercel/Netlify
+    // Vercel/Netlify fetch logic
     const fetchUrl = window.location.hostname.includes('netlify.app')
         ? '/.netlify/functions/auth'
-        : window.location.hostname.includes('vercel.app')
-        ? '/api/auth'  // Assuming this is the Vercel function path
-        : window.location.hostname.includes('fleek.app')
-        ? '/api/fleek-auth'  // Fleek detection and path
-        : '/api/auth';  // Default to Vercel if no detection
+        : '/api/auth';
 
     try {
         const response = await fetch(fetchUrl, {
