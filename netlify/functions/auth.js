@@ -1,5 +1,5 @@
 exports.handler = async (event, context) => {
-  const VALID_CODE = '!@4002naoiR';
+  const VALID_CODE = 'cogitoergosum';
 
   // Only handle POST requests
   if (event.httpMethod === 'POST') {
