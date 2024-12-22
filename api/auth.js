@@ -23,7 +23,11 @@ async function submitCode() {
     // Server-side authentication for Vercel/Netlify
     const fetchUrl = window.location.hostname.includes('netlify.app')
         ? '/.netlify/functions/auth'
-        : '/api/auth';
+        : window.location.hostname.includes('vercel.app')
+        ? '/api/auth'  // Assuming this is the Vercel function path
+        : window.location.hostname.includes('fleek.app')
+        ? '/api/fleek-auth'  // Fleek detection and path
+        : '/api/auth';  // Default to Vercel if no detection
 
     try {
         const response = await fetch(fetchUrl, {
