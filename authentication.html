@@ -135,7 +135,11 @@
             // Determine the correct fetch URL based on the environment
             const fetchUrl = window.location.hostname.includes('netlify.app')
                 ? '/.netlify/functions/auth'
-                : '/api/auth';  // Assuming this is the Vercel function path
+                : window.location.hostname.includes('vercel.app')
+                ? '/api/auth'  // Assuming this is the Vercel function path
+                : window.location.hostname.includes('fleek.co')
+                ? '/api/fleek-auth'  // Fleek detection and path
+                : '/api/auth';  // Default to Vercel if no detection
 
             try {
                 const response = await fetch(fetchUrl, {
