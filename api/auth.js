@@ -1,33 +1,54 @@
-// api/auth.js
+async function submitCode() {
+  const code = document.getElementById('code').value;
+  const messageElement = document.getElementById('message');
 
-// Ideally, store this in environment variables for security
-const VALID_CODE = process.env.AUTH_CODE || 'cogitoergosum';  // Authentication code
-const AUTH_VERSION = process.env.AUTH_VERSION || 'v5';        // Force re-authentication version
+  const isFleek = window.location.hostname.includes('fleek.co');
+  const validCode = 'cogitoergosum';  // Match the VALID_CODE
 
-export default function handler(req, res) {
-  if (req.method === 'POST') {
-    const { code } = req.body;
-
-    // Detect if running on Fleek
-    const isFleek = req.headers.host.includes('fleek.co');
-
-    // Fleek - Handle password check entirely on the client-side
-    if (isFleek) {
-      res.status(405).json({ message: 'Client-side authentication only on Fleek.' });
+  // Client-side auth for Fleek
+  if (isFleek) {
+      if (code === validCode) {
+          messageElement.textContent = 'Access granted';
+          messageElement.className = 'message success';
+          localStorage.setItem('authenticated', 'true');
+          localStorage.setItem('authVersion', currentVersion);
+          window.location.href = '/';
+      } else {
+          messageElement.textContent = 'Invalid code';
+          messageElement.className = 'message error';
+      }
       return;
-    }
+  }
 
-    // Vercel/Netlify - Perform server-side auth
-    if (code === VALID_CODE) {
-      res.status(200).json({ 
-        message: 'Access granted', 
-        version: AUTH_VERSION
+  // Server-side auth for Vercel/Netlify
+  const fetchUrl = window.location.hostname.includes('netlify.app')
+      ? '/.netlify/functions/auth'
+      : '/api/auth';
+
+  try {
+      const response = await fetch(fetchUrl, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ code })
       });
-    } else {
-      res.status(403).json({ message: 'PAY FOR THE FUCKING WEBSITE YOU MONGREL(Please and thank you😊😃)' });
-    }
-  } else {
-    res.setHeader('Allow', ['POST']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+
+      const result = await response.json();
+
+      if (response.ok) {
+          messageElement.textContent = result.message;
+          messageElement.className = 'message success';
+          localStorage.setItem('authenticated', 'true');
+          localStorage.setItem('authVersion', currentVersion);
+          window.location.href = '/';
+      } else {
+          messageElement.textContent = result.message;
+          messageElement.className = 'message error';
+      }
+  } catch (error) {
+      console.error('Error:', error);
+      messageElement.textContent = 'An error occurred.';
+      messageElement.className = 'message error';
   }
 }
