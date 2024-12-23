@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/js/analytics.js"></script>
-    <title>Authentication</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="keywords" content="front-end web developer, unblocked, games, google sites, unblocked games mom, unblocked, code, coding, programmer, development, javascript, jquery, bootstrap, sass, less, git" />
+    <meta property="og:title" content="Welcome to aurora., a lightweight, fast, and clean site." />
+    <meta property="og:site_name" content="mathematicalframeworks.vercel.app" />
+    <meta property="og:description" content="Welcome to aurora., a lightweight, fast, and clean site." />
+    <meta name="description" content="Welcome to aurora., a lightweight, fast, and clean site." />
+    <meta name="author" content="aurora." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>aurora.</title>
     <style>
         body {
             background: radial-gradient(circle at center, #1a1a1a, #0d0d0d, #000000);
@@ -14,160 +20,274 @@
             margin: 0;
             padding: 0;
             height: 100vh;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
         }
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+
+
+
+        .content {
             text-align: center;
-            max-width: 400px;
-            width: 100%;
+            max-width: 90%;
+            margin: 0 auto;
+            transform: translateY(10%);
+            position: relative;
+            z-index: 5;
         }
+
+
+
+
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
+            margin-bottom: 0.5em;
             color: #22c55e;
             text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
-            margin-bottom: 20px;
+            animation: neon-flicker 2s infinite alternate;
         }
-        .form-group {
-            margin-bottom: 15px;
+
+
+
+
+        @keyframes neon-flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.85; }
+            100% { opacity: 1; }
         }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
+
+
+
+
+        #subtitle {
+            font-size: 1.5em;
+            margin-bottom: 1.5em;
             color: #cccccc;
+            text-shadow: 0 0 10px #cccccc, 0 0 20px #ffffff;
         }
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            background: #222;
-            color: #ffffff;
-            box-sizing: border-box;
+
+
+
+
+        p {
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 1.1em;
+            line-height: 1.5;
         }
-        .form-group input[type="password"] {
-            font-family: 'Arial', sans-serif;
-        }
-        .form-group button {
-            padding: 10px 20px;
+
+
+
+
+        button {
+            cursor: pointer;
             background-color: #22c55e;
             border: none;
-            border-radius: 8px;
-            color: #fff;
-            cursor: pointer;
-            font-size: 1em;
+            color: white;
+            padding: 12px 28px;
+            font-size: 16px;
+            border-radius: 20px;
+            margin-top: 20px;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            position: relative;
+            z-index: 6;
         }
-        .form-group button:hover {
+
+
+
+
+        button:hover {
             background-color: #1d9a4f;
             transform: scale(1.05);
         }
-        .message {
-            margin-top: 15px;
-            font-weight: bold;
+
+
+
+
+        .btn-secondary {
+            background-color: #b625cc;
         }
-        .message.success {
-            color: #22c55e;
+
+
+
+
+        .btn-secondary:hover {
+            background-color: #a71aab;
         }
-        .message.error {
-            color: #ff4d4d;
+
+
+
+
+        .btn-tertiary {
+            background-color: #ff8c00;
         }
-        .toggle-password {
-            margin-top: 10px;
-            font-size: 0.9em;
+
+
+
+
+        .btn-tertiary:hover {
+            background-color: #e07b00;
+        }
+
+
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+
+
+        .footer {
             color: #cccccc;
-            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 20px;
         }
-        .toggle-password:hover {
-            color: #ffffff;
+
+
+
+
+        .footer a {
+            color: #22c55e;
+            text-decoration: underline;
+        }
+
+
+
+
+        /* Animated grid background */
+        .grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px), repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px);
+            z-index: 1;
+            opacity: 0.2;
+            animation: grid-move 10s linear infinite;
+        }
+
+
+
+
+        @keyframes grid-move {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-100px, -100px); }
+        }
+
+
+
+
+        /* Floating orb animation */
+        .orb {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at center, rgba(34, 197, 94, 0.7), rgba(0, 0, 0, 0));
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite;
+            mix-blend-mode: color-dodge;
+            filter: blur(30px);
+            z-index: 2;
+        }
+
+
+
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+
+
+
+        .orb:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .orb:nth-child(2) { top: 70%; left: 60%; animation-delay: 2s; }
+        .orb:nth-child(3) { top: 50%; left: 80%; animation-delay: 4s; }
+        .orb:nth-child(4) { top: 30%; left: 30%; animation-delay: 6s; }
+
+
+
+
+        /* Cursor effect styling */
+        #cursor-effect {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-size: cover;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: screen;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Enter Authentication Code</h1>
-        <div class="form-group">
-            <label for="code">Code:</label>
-            <input type="password" id="code" name="code" placeholder="Enter code" autocomplete="off">
-            <span class="toggle-password" onclick="togglePassword()">Show code</span>
-        </div>
-        <div class="form-group">
-            <button onclick="submitCode()">Submit</button>
-        </div>
-        <div id="message" class="message"></div>
+    <div class="grid"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+   
+    <div class="content">
+        <h1>aurora.</h1>
+        <span id="subtitle">Explore and Enjoy!</span>
+        <p>
+            Welcome to aurora., its a lightweight, lightning fast, and simple site. Btw im taking a break im kinda burned out ima do other things<br />
+            <a href="/projects.html"><button>Start playing!</button></a><br />
+            <a href="/misc.html"><button class="btn-secondary">Tools and settings</button></a>
+            <a href="/new-games-log.html"><button class="btn-tertiary">New Games Log</button></a>
+        </p>
+        <p class="footer">
+            &copy; aurora. 2024. All rights reserved. This website is designed for entertainment during free time. Please use responsibly and in accordance with school policies. <br />
+            <a href="https://docs.google.com/document/d/e/2PACX-1vQ2gFMwEZRBQ348jby6p35zX11gx7UoVbRIy0zpEE08JIPkQiThmTv6dM8kkc63IRrLY8JV1dezutZO/pub">Have fun!</a><br />
+            Contact me on <a href="https://www.instagram.com/j.srio">Instagram</a>.
+        </p>
     </div>
-
+   
+    <div id="cursor-effect"></div>
+    <script src="js/cursor.js"></script>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/subtitle.js"></script>
+    <!-- Include Vercel Analytics script -->
     <script>
-        const currentVersion = 'v5';  // Update this version whenever you reset the password
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
 
-        // Check if user is already authenticated and with the correct version
-        if (localStorage.getItem('authenticated') === 'true' && localStorage.getItem('authVersion') === currentVersion) {
-            window.location.href = '/';  // Redirect if already authenticated
-        } else {
-            localStorage.removeItem('authenticated');  // Remove only authentication-related data
-            localStorage.removeItem('authVersion');    // Remove the old auth version
-        }
 
-        // Toggle visibility of the password input
-        function togglePassword() {
-            const codeInput = document.getElementById('code');
-            const togglePasswordText = document.querySelector('.toggle-password');
-            if (codeInput.type === 'password') {
-                codeInput.type = 'text';
-                togglePasswordText.textContent = 'Hide code';
-            } else {
-                codeInput.type = 'password';
-                togglePasswordText.textContent = 'Show code';
-            }
-        }
 
-        async function submitCode() {
-            const code = document.getElementById('code').value;
-            const messageElement = document.getElementById('message');
 
-            // Determine the correct fetch URL based on the environment
-            const fetchUrl = window.location.hostname.includes('netlify.app')
-                ? '/.netlify/functions/auth'
-                : window.location.hostname.includes('vercel.app')
-                ? '/api/auth'  // Assuming this is the Vercel function path
-                : window.location.hostname.includes('fleek.co')
-                ? '/api/fleek-auth'  // Fleek detection and path
-                : '/api/auth';  // Default to Vercel if no detection
+    <!-- about:blank redirection logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const redirectEnabled = localStorage.getItem('redirectToBlank') === 'true';
+            const isInsideIframe = window.self !== window.top; // Check if the script is running inside an iframe
 
-            try {
-                const response = await fetch(fetchUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ code })
-                });
 
-                const result = await response.json();
 
-                if (response.ok) {
-                    messageElement.textContent = result.message;
-                    messageElement.className = 'message success';
-                    localStorage.setItem('authenticated', 'true');
-                    localStorage.setItem('authVersion', currentVersion);  // Store the version after successful login
-                    window.location.href = '/';  // Redirect after success
+
+            if (redirectEnabled && !isInsideIframe) { // Only run if redirect is enabled and not inside an iframe
+                const newWindow = window.open('about:blank', '_blank');
+
+
+
+
+                if (newWindow) {
+                    newWindow.document.write('<iframe src="' + window.location.href + '" style="border:none; width:100%; height:100vh;"></iframe>');
+                    newWindow.document.close();
                 } else {
-                    messageElement.textContent = result.message;
-                    messageElement.className = 'message error';
+                    console.log("Popup blocked or failed to open about:blank tab.");
                 }
-            } catch (error) {
-                console.error('Error:', error);
-                messageElement.textContent = 'An error occurred.';
-                messageElement.className = 'message error';
             }
-        }
+        });
     </script>
 </body>
 </html>
