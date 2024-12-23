@@ -14,212 +14,79 @@
             margin: 0;
             padding: 0;
             height: 100vh;
-            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
-
-
-
-
-        .content {
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
             text-align: center;
-            max-width: 90%;
-            margin: 0 auto;
-            transform: translateY(10%);
-            position: relative;
-            z-index: 5;
+            max-width: 400px;
+            width: 100%;
         }
-
-
-
-
         h1 {
-            font-size: 3em;
-            margin-bottom: 0.5em;
+            font-size: 2.5em;
             color: #22c55e;
             text-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e;
-            animation: neon-flicker 2s infinite alternate;
+            margin-bottom: 20px;
         }
-
-
-
-
-        @keyframes neon-flicker {
-            0% { opacity: 1; }
-            50% { opacity: 0.85; }
-            100% { opacity: 1; }
+        .form-group {
+            margin-bottom: 15px;
         }
-
-
-
-
-        #subtitle {
-            font-size: 1.5em;
-            margin-bottom: 1.5em;
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
             color: #cccccc;
-            text-shadow: 0 0 10px #cccccc, 0 0 20px #ffffff;
         }
-
-
-
-
-        p {
-            max-width: 600px;
-            margin: 20px auto;
-            font-size: 1.1em;
-            line-height: 1.5;
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background: #222;
+            color: #ffffff;
+            box-sizing: border-box;
         }
-
-
-
-
-        button {
-            cursor: pointer;
+        .form-group input[type="password"] {
+            font-family: 'Arial', sans-serif;
+        }
+        .form-group button {
+            padding: 10px 20px;
             background-color: #22c55e;
             border: none;
-            color: white;
-            padding: 12px 28px;
-            font-size: 16px;
-            border-radius: 20px;
-            margin-top: 20px;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1em;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            position: relative;
-            z-index: 6;
         }
-
-
-
-
-        button:hover {
+        .form-group button:hover {
             background-color: #1d9a4f;
             transform: scale(1.05);
         }
-
-
-
-
-        .btn-secondary {
-            background-color: #b625cc;
+        .message {
+            margin-top: 15px;
+            font-weight: bold;
         }
-
-
-
-
-        .btn-secondary:hover {
-            background-color: #a71aab;
-        }
-
-
-
-
-        .btn-tertiary {
-            background-color: #ff8c00;
-        }
-
-
-
-
-        .btn-tertiary:hover {
-            background-color: #e07b00;
-        }
-
-
-
-
-        a {
-            text-decoration: none;
-        }
-
-
-
-
-        .footer {
-            color: #cccccc;
-            font-size: 0.9em;
-            margin-top: 20px;
-        }
-
-
-
-
-        .footer a {
+        .message.success {
             color: #22c55e;
-            text-decoration: underline;
         }
-
-
-
-
-        /* Animated grid background */
-        .grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px), repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255, 255, 255, 0.1) 10px, rgba(255, 255, 255, 0.1) 11px);
-            z-index: 1;
-            opacity: 0.2;
-            animation: grid-move 10s linear infinite;
+        .message.error {
+            color: #ff4d4d;
         }
-
-
-
-
-        @keyframes grid-move {
-            from { transform: translate(0, 0); }
-            to { transform: translate(-100px, -100px); }
+        .toggle-password {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #cccccc;
+            cursor: pointer;
         }
-
-
-
-
-        /* Floating orb animation */
-        .orb {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle at center, rgba(34, 197, 94, 0.7), rgba(0, 0, 0, 0));
-            border-radius: 50%;
-            animation: float 10s ease-in-out infinite;
-            mix-blend-mode: color-dodge;
-            filter: blur(30px);
-            z-index: 2;
-        }
-
-
-
-
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            50% { transform: translate(50px, 50px); }
-            100% { transform: translate(0, 0); }
-        }
-
-
-
-
-        .orb:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-        .orb:nth-child(2) { top: 70%; left: 60%; animation-delay: 2s; }
-        .orb:nth-child(3) { top: 50%; left: 80%; animation-delay: 4s; }
-        .orb:nth-child(4) { top: 30%; left: 30%; animation-delay: 6s; }
-
-
-
-
-        /* Cursor effect styling */
-        #cursor-effect {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background-size: cover;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: screen;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
+        .toggle-password:hover {
+            color: #ffffff;
         }
     </style>
 </head>
@@ -237,11 +104,38 @@
         <div id="message" class="message"></div>
     </div>
 
-    <!-- Load the authentication script -->
-    <script src="/js/auth.js"></script>
-
-    <!-- Only keep the toggle password functionality in this file -->
     <script>
+        const currentVersion = 'v5';
+        const securityKey = [
+            '98a2f', '7b3e1', '6c4d9', 'ae5f8', '2d1c7',
+            '4e9b3', '8f7a2', '1d6c4', '5b3e8', '9a7f2'
+        ].join('');
+
+        function createHash(input) {
+            let hash = 0;
+            for (let i = 0; i < input.length; i++) {
+                const char = input.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return hash.toString(36);
+        }
+
+        function validateCode(input) {
+            if (!input || input.length < 8) return false;
+            const hashResult = createHash(input);
+            const expectedHash = createHash('cogitoergosum');
+            
+            let isValid = true;
+            for (let i = 0; i < hashResult.length; i++) {
+                if (hashResult[i] !== expectedHash[i]) {
+                    isValid = false;
+                }
+            }
+            
+            return isValid;
+        }
+
         function togglePassword() {
             const codeInput = document.getElementById('code');
             const togglePasswordText = document.querySelector('.toggle-password');
@@ -253,6 +147,77 @@
                 togglePasswordText.textContent = 'Show code';
             }
         }
+
+        async function submitCode() {
+            const code = document.getElementById('code').value;
+            const messageElement = document.getElementById('message');
+
+            try {
+                await new Promise(resolve => setTimeout(resolve, Math.random() * 500));
+
+                if (validateCode(code)) {
+                    messageElement.textContent = 'Access granted. Redirecting...';
+                    messageElement.className = 'message success';
+                    
+                    const timestamp = Date.now();
+                    const authToken = createHash(timestamp + securityKey);
+                    localStorage.setItem('authToken', authToken);
+                    localStorage.setItem('authTimestamp', timestamp);
+                    localStorage.setItem('authVersion', currentVersion);
+                    
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 1000);
+                } else {
+                    messageElement.textContent = 'Invalid code. Please try again.';
+                    messageElement.className = 'message error';
+                    document.getElementById('code').value = '';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                messageElement.textContent = 'An error occurred. Please try again.';
+                messageElement.className = 'message error';
+            }
+        }
+
+        function verifyStoredAuth() {
+            const storedToken = localStorage.getItem('authToken');
+            const timestamp = localStorage.getItem('authTimestamp');
+            const version = localStorage.getItem('authVersion');
+            
+            if (!storedToken || !timestamp || version !== currentVersion) {
+                return false;
+            }
+            
+            const expectedToken = createHash(timestamp + securityKey);
+            return storedToken === expectedToken;
+        }
+
+        function checkAuthentication() {
+            const isAuthenticated = verifyStoredAuth();
+            
+            if (isAuthenticated) {
+                if (window.location.pathname === '/authentication.html') {
+                    window.location.href = '/';
+                }
+            } else {
+                localStorage.removeItem('authToken');
+                localStorage.removeItem('authTimestamp');
+                localStorage.removeItem('authVersion');
+                
+                if (window.location.pathname !== '/authentication.html') {
+                    window.location.href = '/authentication.html';
+                }
+            }
+        }
+
+        document.getElementById('code').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                submitCode();
+            }
+        });
+
+        checkAuthentication();
     </script>
 </body>
 </html>
