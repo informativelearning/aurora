@@ -5,9 +5,9 @@ async function submitCode() {
     const messageElement = document.getElementById('message');
 
     const isFleek = window.location.hostname.includes('fleek.app');
-
+    
     if (isFleek) {
-        // Direct comparison for Fleek, skip serverless call
+        // Directly compare without fetch for Fleek
         if (btoa(code) === obfuscatedCode) {
             messageElement.textContent = 'Access granted';
             messageElement.className = 'message success';
@@ -21,7 +21,7 @@ async function submitCode() {
         return;
     }
 
-    // Vercel/Netlify fetch logic
+    // For Vercel/Netlify (server-side auth)
     const fetchUrl = window.location.hostname.includes('netlify.app')
         ? '/.netlify/functions/auth'
         : '/api/auth';
