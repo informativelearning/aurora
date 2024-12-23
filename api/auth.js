@@ -4,7 +4,7 @@ async function submitCode() {
     const code = document.getElementById('code').value;
     const messageElement = document.getElementById('message');
 
-    const isFleek = window.location.hostname.includes('fleek.co');
+    const isFleek = window.location.hostname.includes('fleek.app');
 
     if (isFleek) {
         // Direct comparison for Fleek, skip serverless call
