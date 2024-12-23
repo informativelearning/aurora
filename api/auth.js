@@ -114,6 +114,3 @@ document.getElementById('code')?.addEventListener('keypress', function(event) {
         submitCode();
     }
 });
-
-// Run authentication check when script loads
-checkAuthentication();
