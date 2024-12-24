@@ -16,17 +16,7 @@ function createHash(input) {
 
 function validateCode(input) {
     if (!input || input.length < 8) return false;
-    const hashResult = createHash(input);
-    const expectedHash = createHash('cogitoergosum');
-    
-    let isValid = true;
-    for (let i = 0; i < hashResult.length; i++) {
-        if (hashResult[i] !== expectedHash[i]) {
-            isValid = false;
-        }
-    }
-    
-    return isValid;
+    return createHash(input) === createHash('cogitoergosum');
 }
 
 async function submitCode() {
@@ -42,13 +32,13 @@ async function submitCode() {
             
             const timestamp = Date.now();
             const authToken = createHash(timestamp + securityKey);
+            
+            // Store authentication data
             localStorage.setItem('authToken', authToken);
             localStorage.setItem('authTimestamp', timestamp);
             localStorage.setItem('authVersion', currentVersion);
             
-            setTimeout(() => {
-                window.location.href = '/';
-            }, 1000);
+            window.location.href = '/';
         } else {
             messageElement.textContent = 'Invalid code. Please try again.';
             messageElement.className = 'message error';
@@ -59,17 +49,4 @@ async function submitCode() {
         messageElement.textContent = 'An error occurred. Please try again.';
         messageElement.className = 'message error';
     }
-}
-
-function verifyStoredAuth() {
-    const storedToken = localStorage.getItem('authToken');
-    const timestamp = localStorage.getItem('authTimestamp');
-    const version = localStorage.getItem('authVersion');
-    
-    if (!storedToken || !timestamp || version !== currentVersion) {
-        return false;
-    }
-    
-    const expectedToken = createHash(timestamp + securityKey);
-    return storedToken === expectedToken;
 }
