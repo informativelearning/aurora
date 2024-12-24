@@ -73,23 +73,3 @@ function verifyStoredAuth() {
     const expectedToken = createHash(timestamp + securityKey);
     return storedToken === expectedToken;
 }
-
-function checkAuthentication() {
-    const isAuthenticated = verifyStoredAuth();
-    
-    if (isAuthenticated) {
-        if (window.location.pathname === '/authentication.html') {
-            window.location.href = '/';
-        }
-    } else {
-        localStorage.removeItem('authToken');
-        localStorage.removeItem('authTimestamp');
-        localStorage.removeItem('authVersion');
-        
-        if (window.location.pathname !== '/authentication.html') {
-            window.location.href = '/authentication.html';
-        }
-    }
-}
-
-checkAuthentication();
