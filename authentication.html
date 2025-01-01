@@ -100,7 +100,7 @@
             <span class="toggle-password" onclick="togglePassword()">Show code</span>
         </div>
         <div class="form-group">
-            <button onclick="submitCode()">Submit</button>
+            <button onclick="submitCode()">Enter</button>
         </div>
         <div id="message" class="message"></div>
     </div>
@@ -147,7 +147,7 @@
                 await new Promise(resolve => setTimeout(resolve, Math.random() * 500));
 
                 if (validateCode(code)) {
-                    messageElement.textContent = 'Access granted. Redirecting...';
+                    messageElement.textContent = 'redirecting to homepage';
                     messageElement.className = 'message success';
                     
                     // Set both auth.js and analytics.js required items
